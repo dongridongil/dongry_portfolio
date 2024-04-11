@@ -1,3 +1,12 @@
+import DongflixBackimg from '../../asset/imgs/netflixback.png';
+import Dongfliximg from '../../asset/imgs/dongflix.png';
+import Momentimg from '../../asset/imgs/momentemapp.png';
+import MomentBackimg from '../../asset/imgs/momentback.png';
+import Movieimg from '../../asset/imgs/movieapp.png';
+import MovieBackimg from '../../asset/imgs/movieback.png';
+import Coinimg from '../../asset/imgs/coinapp.png';
+import CoinBackimg from '../../asset/imgs/coinback.png';
+
 export interface Project {
     id: number;
     imageUrl: string;
@@ -12,8 +21,8 @@ export interface Project {
 const ProjectsData: Project[] = [
     {
         id: 1,
-        imageUrl: '/../asset/imgs/dongflix.png',
-        backimage: '/../asset/imgs/netflixback.png',
+        imageUrl: Dongfliximg,
+        backimage: DongflixBackimg,
         name: 'NETFLIX CLONE',
         title: 'Dongflix ',
         skill: 'React JS',
@@ -23,8 +32,8 @@ const ProjectsData: Project[] = [
     },
     {
         id: 2,
-        imageUrl: '/../asset/imgs/momentemapp.png',
-        backimage: '/../asset/imgs/momentback.png',
+        imageUrl: Momentimg,
+        backimage: MomentBackimg,
         name: 'MOMENTUM',
         title: '일정관리 앱',
         skill: 'React JS',
@@ -35,8 +44,8 @@ const ProjectsData: Project[] = [
     },
     {
         id: 3,
-        imageUrl: '/../asset/imgs/movieapp.png',
-        backimage: '/../asset/imgs/movieback.png',
+        imageUrl: Movieimg,
+        backimage: MovieBackimg,
         name: 'Movie Information Site',
         title: '다양한 영화정보 소개사이트',
         skill: 'React JS',
@@ -45,8 +54,8 @@ const ProjectsData: Project[] = [
     },
     {
         id: 4,
-        imageUrl: '/../asset/imgs/coinapp.png',
-        backimage: '/../asset/imgs/coinback.png',
+        imageUrl: Coinimg,
+        backimage: CoinBackimg,
         name: 'Coin Information Site',
         title: '코인정보 사이트',
         skill: 'React JS',

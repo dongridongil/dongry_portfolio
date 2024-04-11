@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import Gitimg from '../../asset/imgs/git-hub.png';
+import Velogimg from '../../asset/imgs/velogg.png';
 
 const FooterContainer = styled.footer`
     background-color: #358aa4;
@@ -42,10 +44,10 @@ const Footer = () => {
         <FooterContainer>
             <ImgWrapper>
                 <Link href="https://github.com/dongridongil" target="_blank">
-                    <Image src="/../asset/imgs/footer/git-hub.png"></Image>
+                    <Image src={Gitimg} />
                 </Link>
                 <Link href="https://velog.io/@ehddlfwkd/posts" target="_blank">
-                    <Image src="/../asset/imgs/footer/velogg.png" />
+                    <Image src={Velogimg} />
                 </Link>
             </ImgWrapper>
             <Footerspan> © 2024 Designed by KIM Di. All rights reserved.</Footerspan>
