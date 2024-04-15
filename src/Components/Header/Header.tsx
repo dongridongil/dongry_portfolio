@@ -33,12 +33,12 @@ const Tab = styled.div`
 
 const navVar = {
     top: {
-        backgroundColor: '#358aa4',
+        backgroundColor: 'rgba(0,0,0,0)',
         transition: { duration: 0.5 },
     },
 
     scroll: {
-        backgroundColor: 'rgba(0,0,0,0)',
+        backgroundColor: '#358aa4',
         transition: { duration: 0.5 },
     },
 };

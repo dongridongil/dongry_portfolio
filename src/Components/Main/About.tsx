@@ -32,7 +32,6 @@ const ImgArea = styled(Area)`
     img {
         display: block;
         width: 500px;
-        transition: opacity 0.3s ease;
     }
 
     @media (max-width: 500px) {
@@ -68,7 +67,7 @@ const Contact = styled.span`
     bottom: 360px;
     border-radius: 10px;
     border: none;
-    background-color: #6acdec;
+    background-color: #e31b6d;
     color: white;
     position: absolute;
     text-align: center;
@@ -80,7 +79,7 @@ const Contact = styled.span`
     &:hover {
         font-size: 19px;
         color: white;
-        background-color: #e31b6d;
+        background-color: #358aa4;
     }
 `;
 const IconImage = styled(PiCursorClickFill)`
@@ -104,7 +103,7 @@ const Main = () => {
                                 </IconWrapper>
                             )}
 
-                            {isHover ? <img src={di} alt="Hover Image" /> : <img src={DI} alt="Normal Image" />}
+                            {isHover ? <img src={di} /> : <img src={DI} />}
                         </ImgArea>
 
                         <TextArea>
