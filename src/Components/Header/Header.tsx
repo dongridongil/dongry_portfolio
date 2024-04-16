@@ -1,4 +1,4 @@
-import { motion, useAnimation, useMotionValueEvent, useScroll } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 

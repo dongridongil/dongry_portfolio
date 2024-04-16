@@ -18,12 +18,11 @@ const FooterContainer = styled.footer`
 const ImgWrapper = styled.div`
     width: 60px;
     height: 60px;
-    display: flex; /* 이미지를 가로로 정렬하기 위해 flex를 사용합니다. */
+    display: flex;
     justify-content: center;
     margin: 0 15px;
-
     position: absolute;
-    margin-bottom: 30px; /* 이미지와 텍스트 사이의 간격을 설정할 수 있습니다. */
+    margin-bottom: 30px;
 `;
 
 const Link = styled.a``;
@@ -32,12 +31,12 @@ const Image = styled.img`
     display: block;
     width: 60px;
     height: 60px;
-    margin-right: 10px; /* 이미지 사이의 간격을 설정합니다. */
+    margin-right: 10px;
 `;
 const Footerspan = styled.span`
-    margin-bottom: 20px; /* Footer와의 간격 조정 */
-    position: absolute; /* FooterContainer를 기준으로 위치를 조정하기 위해 절대적으로 설정합니다. */
-    bottom: 0; /* FooterContainer의 하단에 위치하도록 설정합니다. */
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 0;
 `;
 const Footer = () => {
     return (

@@ -1,4 +1,4 @@
-import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom'; // BrowserRouter를 Router로 변경
+import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom'; //
 
 import Home from './Routes/Home';
 import About from './Components/Main/About';
