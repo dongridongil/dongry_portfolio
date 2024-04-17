@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/react-port/static/js/main.ba9ebd3b.js",
+    "main.js": "/react-port/static/js/main.24ba0493.js",
     "static/media/netflixback.png": "/react-port/static/media/netflixback.f8a73530891068f30aa1.png",
-    "static/media/momentback.png": "/react-port/static/media/momentback.7c050974746b7ca28013.png",
     "static/media/dongflix.png": "/react-port/static/media/dongflix.89c57be57075f9013baa.png",
-    "static/media/momentemapp.png": "/react-port/static/media/momentemapp.49b4d71d157a20727658.png",
+    "static/media/momentfront.png": "/react-port/static/media/momentfront.db95714cf53e9f9e7457.png",
+    "static/media/backmoment.png": "/react-port/static/media/backmoment.3f704fd395b20799f78c.png",
     "static/media/movieback.png": "/react-port/static/media/movieback.6f0a9f16ba5abe425a04.png",
     "static/media/movieapp.png": "/react-port/static/media/movieapp.abb0468b0578a5f9f57e.png",
     "static/media/realdongil.png": "/react-port/static/media/realdongil.a871b3524ec901ba5b83.png",
@@ -23,9 +23,9 @@
     "index.html": "/react-port/index.html",
     "static/media/html5.svg": "/react-port/static/media/html5.366c7a1ace25f34184363f46c787822d.svg",
     "static/media/css3.svg": "/react-port/static/media/css3.362b04c907d99f28a40f72feec1bba57.svg",
-    "main.ba9ebd3b.js.map": "/react-port/static/js/main.ba9ebd3b.js.map"
+    "main.24ba0493.js.map": "/react-port/static/js/main.24ba0493.js.map"
   },
   "entrypoints": [
-    "static/js/main.ba9ebd3b.js"
+    "static/js/main.24ba0493.js"
   ]
 }
