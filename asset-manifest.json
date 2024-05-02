@@ -1,12 +1,14 @@
 {
   "files": {
-    "main.js": "/react-port/static/js/main.24ba0493.js",
+    "main.js": "/react-port/static/js/main.003fdab6.js",
     "static/media/netflixback.png": "/react-port/static/media/netflixback.f8a73530891068f30aa1.png",
     "static/media/dongflix.png": "/react-port/static/media/dongflix.89c57be57075f9013baa.png",
     "static/media/momentfront.png": "/react-port/static/media/momentfront.db95714cf53e9f9e7457.png",
+    "static/media/Shop.png": "/react-port/static/media/Shop.16afc5969c5c62b501c6.png",
     "static/media/backmoment.png": "/react-port/static/media/backmoment.3f704fd395b20799f78c.png",
     "static/media/movieback.png": "/react-port/static/media/movieback.6f0a9f16ba5abe425a04.png",
     "static/media/movieapp.png": "/react-port/static/media/movieapp.abb0468b0578a5f9f57e.png",
+    "static/media/Shopback.png": "/react-port/static/media/Shopback.81f247a291c8552b0152.png",
     "static/media/realdongil.png": "/react-port/static/media/realdongil.a871b3524ec901ba5b83.png",
     "static/media/coinback.png": "/react-port/static/media/coinback.a51760e75d5917e55eda.png",
     "static/media/dongil.png": "/react-port/static/media/dongil.89f855c28c21be38056d.png",
@@ -23,9 +25,9 @@
     "index.html": "/react-port/index.html",
     "static/media/html5.svg": "/react-port/static/media/html5.366c7a1ace25f34184363f46c787822d.svg",
     "static/media/css3.svg": "/react-port/static/media/css3.362b04c907d99f28a40f72feec1bba57.svg",
-    "main.24ba0493.js.map": "/react-port/static/js/main.24ba0493.js.map"
+    "main.003fdab6.js.map": "/react-port/static/js/main.003fdab6.js.map"
   },
   "entrypoints": [
-    "static/js/main.24ba0493.js"
+    "static/js/main.003fdab6.js"
   ]
 }
