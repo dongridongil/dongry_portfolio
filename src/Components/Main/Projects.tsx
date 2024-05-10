@@ -4,6 +4,9 @@ import React, { useState } from 'react';
 import ProjectsData, { Project } from './ProjectsData';
 import { IoMdClose } from 'react-icons/io';
 import { IoEnter } from 'react-icons/io5';
+// import { Nav, Tab } from 'react-bootstrap';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
 const Contents = styled.ul`
     display: flex;
@@ -11,9 +14,13 @@ const Contents = styled.ul`
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
-    margin-bottom: 500px;
+    margin-top: 50px;
+    margin-bottom: 100px;
 `;
 
+const Backcolor = styled.div`
+    background-color: #f5f5f5;
+`;
 const Image = styled.img`
     display: block;
     width: 100%;
@@ -207,9 +214,29 @@ const TitleContainer = styled.div`
     top: 485px;
     left: 45px;
 `;
+
 const Projects = ({ projectsData }: { projectsData: Project[] }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [selectProject, setSelectProject] = useState<Project | null>(null);
+
+    const [activeTab, setActivetab] = useState<string>('all');
+
+    const tabChange = (tab: string) => {
+        setActivetab(tab);
+    };
+
+    const filteredProjects = (): Project[] => {
+        if (activeTab === 'all') {
+            return ProjectsData;
+        } else if (activeTab === 'react') {
+            return ProjectsData.filter((project) => project.id >= 1 && project.id <= 4);
+        } else if (activeTab === 'js') {
+            return ProjectsData.filter((project) => project.id === 5);
+        } else if (activeTab === 'vue') {
+            return ProjectsData.filter((project) => project.id === 6);
+        }
+        return [];
+    };
 
     const openModal = (project: Project) => {
         setSelectProject(project);
@@ -228,56 +255,71 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
     };
     return (
         <section id="project">
-            <GWrapper>
-                <GInner>
-                    <SectionHeader text=" PROJECT" />
-                    <GArea>
-                        <Contents>
-                            {ProjectsData.map((project) => (
-                                <ProjectItem key={project.id}>
-                                    <ImageContainer>
-                                        <Image src={project.imageUrl} alt="Projects" />
-                                        <Overlay>
-                                            <Name>{project.name}</Name>
-                                            <Skill>{project.skill}</Skill>
+            <Backcolor>
+                <GWrapper>
+                    <GInner>
+                        <SectionHeader text=" PROJECT" />
+                        <GArea>
+                            <Tabs
+                                defaultActiveKey="all"
+                                id="justify-tab-example"
+                                className="mb-3 fs-4 fw-bold"
+                                justify
+                                onSelect={(tab) => tab !== null && tabChange(tab)}
+                            >
+                                <Tab eventKey="all" title="All"></Tab>
+                                <Tab eventKey="react" title="React"></Tab>
+                                <Tab eventKey="js" title="Vanilla JS"></Tab>
+                                <Tab eventKey="vue" title="Vue"></Tab>
+                            </Tabs>
 
-                                            <LearnMoreButton onClick={() => openModal(project)}>
-                                                LEARN MORE
-                                            </LearnMoreButton>
-                                        </Overlay>
-                                    </ImageContainer>
-                                </ProjectItem>
-                            ))}
-                        </Contents>
-                    </GArea>
-                </GInner>
-                {modalOpen && (
-                    <ModalBackground onClick={closeModalOnclick}>
-                        <ModalWrapper>
-                            <ModalImg>
-                                <ModalBackgroundimg src={selectProject?.backimage} />
-                            </ModalImg>
-                            <ModalContent>
-                                <TitleContainer>
-                                    <Title>{selectProject?.title}</Title>
-                                    <Underscore />
-                                </TitleContainer>
-                                <Summary>{selectProject?.summary}</Summary>
+                            <Contents>
+                                {filteredProjects().map((project) => (
+                                    <ProjectItem key={project.id}>
+                                        <ImageContainer>
+                                            <Image src={project.imageUrl} alt="Projects" />
+                                            <Overlay>
+                                                <Name>{project.name}</Name>
+                                                <Skill>{project.skill}</Skill>
 
-                                <a href={selectProject?.url} target="_blank">
-                                    <ModalButton>
-                                        <IoEnter />
-                                        GO HOME
-                                    </ModalButton>
-                                </a>
-                                <CloseButton onClick={closeModal}>
-                                    <IoMdClose />
-                                </CloseButton>
-                            </ModalContent>
-                        </ModalWrapper>
-                    </ModalBackground>
-                )}
-            </GWrapper>
+                                                <LearnMoreButton onClick={() => openModal(project)}>
+                                                    LEARN MORE
+                                                </LearnMoreButton>
+                                            </Overlay>
+                                        </ImageContainer>
+                                    </ProjectItem>
+                                ))}
+                            </Contents>
+                        </GArea>
+                    </GInner>
+                    {modalOpen && (
+                        <ModalBackground onClick={closeModalOnclick}>
+                            <ModalWrapper>
+                                <ModalImg>
+                                    <ModalBackgroundimg src={selectProject?.backimage} />
+                                </ModalImg>
+                                <ModalContent>
+                                    <TitleContainer>
+                                        <Title>{selectProject?.title}</Title>
+                                        <Underscore />
+                                    </TitleContainer>
+                                    <Summary>{selectProject?.summary}</Summary>
+
+                                    <a href={selectProject?.url} target="_blank">
+                                        <ModalButton>
+                                            <IoEnter />
+                                            GO HOME
+                                        </ModalButton>
+                                    </a>
+                                    <CloseButton onClick={closeModal}>
+                                        <IoMdClose />
+                                    </CloseButton>
+                                </ModalContent>
+                            </ModalWrapper>
+                        </ModalBackground>
+                    )}
+                </GWrapper>
+            </Backcolor>
         </section>
     );
 };

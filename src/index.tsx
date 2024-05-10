@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import App from './App';
 import { darkTheme } from './theme';
 import { createGlobalStyle } from 'styled-components';
+import 'bootstrap/dist/css/bootstrap.css';
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap');
 html, body, div, span, applet, object, iframe,
@@ -67,6 +68,9 @@ body {
 a {
   text-decoration:none;
   color:inherit;
+}
+.nav-link {
+  color: #201e1edc; 
 }
 `;
 ReactDOM.render(

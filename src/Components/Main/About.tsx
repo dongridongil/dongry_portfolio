@@ -66,7 +66,7 @@ const Contact = styled.span`
     bottom: 360px;
     border-radius: 10px;
     border: none;
-    background-color: #ced42d;
+    background-color: #dae028;
     color: white;
     position: absolute;
     text-align: center;

@@ -35,13 +35,13 @@ const ProjectsData: Project[] = [
         url: 'https://dongridongil.github.io/dongfilx_clone/',
     },
     {
-        id: 2,
+        id: 5,
         imageUrl: Momentimg,
         backimage: MomentBackimg,
         name: 'MOMENTUM',
         title: '일정관리 앱',
-        skill: 'React  , Java Script',
-        summary: ` Chrome의 일정관리 앱인 momentum을 React 을 통해 만들어보았습니다 . 
+        skill: 'Vanilla JS',
+        summary: ` Chrome의 일정관리 앱인 momentum을 바닐라JS 를 통해 만들어보았습니다 . 
             날씨와 온도정보를 제공하며 localStorage 을 통해 로컬환경에서 
             일정을 저장하여 관리 할수있는 앱입니다. `,
         url: 'https://dongridongil.github.io/momentem/',
@@ -68,7 +68,7 @@ const ProjectsData: Project[] = [
         url: 'https://dongridongil.github.io/coin_app/',
     },
     {
-        id: 5,
+        id: 2,
         imageUrl: Shopimg,
         backimage: ShopBackimg,
         name: 'Shopping Mall',
