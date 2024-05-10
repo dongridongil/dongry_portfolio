@@ -9,6 +9,7 @@ import Css3Svg from '../../asset/imgs/css3.svg';
 import NginxSvg from '../../asset/imgs/nginx.svg';
 import CloudFlareSvg from '../../asset/imgs/cloudflare.svg';
 import LaravelSvg from '../../asset/imgs/laravel.svg';
+import Vuejpg from '../../asset/imgs/vue.png';
 
 const SkillsData = [
     {
@@ -30,10 +31,10 @@ const SkillsData = [
 
     {
         id: 4,
-        name: 'RDB',
-        svg: DbSvg,
+        name: 'Vue',
+        svg: Vuejpg,
         comment:
-            'MongoDB, Mysql, MariaDb, Postgresql ,GraphQL 등 다양한 rdb를 활용하여 쿼리를 작성하고 crud작업을 진행하였습니다.',
+            '요즘 많이 빠져있는 언어 입니다. 쉽고 빠르고 무엇보다 팀원과 통일성 있는 코드로 협업할수 있다는 장점이 큰 매력인거 같습니다.',
     },
     {
         id: 5,
@@ -83,6 +84,14 @@ const SkillsData = [
         svg: LaravelSvg,
         comment:
             ' 회사 프로젝트중 php 를 사용하였으며 php 프레임워크인 라라벨을 사용하였습니다. 직관적인 문법을 제공하며 php 프레임워크지만 프론트에서는 자바스크립트를 사용할수있습니다 그리고 라우팅과 mvc 아키텍처에 대해 많이 알게되는 시간이였습니다.   ',
+    },
+
+    {
+        id: 12,
+        name: 'RDB',
+        svg: DbSvg,
+        comment:
+            'MongoDB, Mysql, MariaDb, Postgresql ,GraphQL 등 다양한 rdb를 활용하여 쿼리를 작성하고 crud작업을 진행하였습니다.',
     },
 ];
 

@@ -36,9 +36,12 @@ const Overlay = styled.div`
 `;
 const ImageContainer = styled.div`
     position: relative;
-    width: 390px;
-    height: 300px;
+    width: 450px;
+    height: 400px;
     overflow: hidden;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    border-radius: 30px;
 `;
 
 const ProjectItem = styled.li`
@@ -64,6 +67,7 @@ const Name = styled.p`
 
 const Skill = styled.p`
     position: absolute;
+    font-weight: 600;
     text-align: center;
     font-size: 20px;
     color: #e31b6d;
@@ -226,7 +230,7 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
         <section id="project">
             <GWrapper>
                 <GInner>
-                    <SectionHeader text="PROJECT" />
+                    <SectionHeader text=" PROJECT" />
                     <GArea>
                         <Contents>
                             {ProjectsData.map((project) => (

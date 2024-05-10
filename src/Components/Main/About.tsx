@@ -3,7 +3,6 @@ import { GArea, GInner, GWrapper, SectionHeader } from '../../GlobalComponents';
 import DI from '../../asset/imgs/dongil.png';
 import di from '../../asset/imgs/realdongil.png';
 import { useState } from 'react';
-import { PiCursorClickFill } from 'react-icons/pi';
 
 const Wrapper = styled(GWrapper)`
     &::before {
@@ -67,7 +66,7 @@ const Contact = styled.span`
     bottom: 360px;
     border-radius: 10px;
     border: none;
-    background-color: #e31b6d;
+    background-color: #ced42d;
     color: white;
     position: absolute;
     text-align: center;
@@ -82,11 +81,6 @@ const Contact = styled.span`
         background-color: #358aa4;
     }
 `;
-const IconImage = styled(PiCursorClickFill)`
-    width: 40px;
-    height: 40px;
-    color: #340fd9;
-`;
 
 const Main = () => {
     const [isHover, setIsHover] = useState(false);
@@ -98,9 +92,7 @@ const Main = () => {
                     <Contents>
                         <ImgArea onMouseOver={() => setIsHover(true)} onMouseOut={() => setIsHover(false)}>
                             {!isHover && ( //호버가되면 클릭이미지안보임
-                                <IconWrapper>
-                                    <IconImage />
-                                </IconWrapper>
+                                <IconWrapper></IconWrapper>
                             )}
 
                             {isHover ? <img src={di} /> : <img src={DI} />}
@@ -119,8 +111,8 @@ const Main = () => {
                                 위해 프론트엔드 를 집중적으로 공부 중입니다.
                                 <br />
                                 <br />
-                                <span style={{ color: '#e31b6d', fontSize: '40px' }}>React</span>와{' '}
-                                <span style={{ color: '#e31b6d', fontSize: '40px' }}>ES6</span> 이상의 문법,{' '}
+                                <span style={{ color: '#e31b6d', fontSize: '40px' }}>React </span>와{' '}
+                                <span style={{ color: '#e31b6d', fontSize: '40px' }}>Vue JS</span> 그리고{' '}
                                 <span style={{ color: '#e31b6d', fontSize: '40px' }}>TypeScript</span> 등을 습득하고
                                 있으며,
                                 <br />
@@ -137,7 +129,11 @@ const Main = () => {
                                         GitHub
                                     </a>
                                 </Contact>
-                                <Contact style={{ left: '1220px', width: '250px' }}>ehddlfwkd32@naver.com</Contact>
+                                <Contact style={{ left: '1220px' }}>
+                                    <a href="https://velog.io/@ehddlfwkd/posts" target="blank">
+                                        Velog
+                                    </a>
+                                </Contact>
                             </Paragraph>
                         </TextArea>
                     </Contents>
