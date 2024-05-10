@@ -1,6 +1,7 @@
 {
   "files": {
-    "main.js": "/react-port/static/js/main.7edebc9d.js",
+    "main.css": "/react-port/static/css/main.9a6d1f18.css",
+    "main.js": "/react-port/static/js/main.5374da2c.js",
     "static/media/netflixback.png": "/react-port/static/media/netflixback.f8a73530891068f30aa1.png",
     "static/media/dongflix.png": "/react-port/static/media/dongflix.89c57be57075f9013baa.png",
     "static/media/momentfront.png": "/react-port/static/media/momentfront.db95714cf53e9f9e7457.png",
@@ -28,9 +29,11 @@
     "index.html": "/react-port/index.html",
     "static/media/html5.svg": "/react-port/static/media/html5.366c7a1ace25f34184363f46c787822d.svg",
     "static/media/css3.svg": "/react-port/static/media/css3.362b04c907d99f28a40f72feec1bba57.svg",
-    "main.7edebc9d.js.map": "/react-port/static/js/main.7edebc9d.js.map"
+    "main.9a6d1f18.css.map": "/react-port/static/css/main.9a6d1f18.css.map",
+    "main.5374da2c.js.map": "/react-port/static/js/main.5374da2c.js.map"
   },
   "entrypoints": [
-    "static/js/main.7edebc9d.js"
+    "static/css/main.9a6d1f18.css",
+    "static/js/main.5374da2c.js"
   ]
 }
