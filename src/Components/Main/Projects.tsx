@@ -21,11 +21,6 @@ const Contents = styled.ul`
 const Backcolor = styled.div`
     background-color: #f5f5f5;
 `;
-const Image = styled.img`
-    display: block;
-    width: 100%;
-    height: 100%;
-`;
 
 const Overlay = styled.div`
     position: absolute;
@@ -49,6 +44,13 @@ const ImageContainer = styled.div`
     margin-bottom: 50px;
     margin-left: 50px;
     border-radius: 30px;
+`;
+
+const Image = styled.img`
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-image: cover;
 `;
 
 const ProjectItem = styled.li`
@@ -132,14 +134,14 @@ interface ModalImgProps {
 const ModalImg = styled.div<ModalImgProps>`
     width: 700px;
     height: 460px;
-    overflow: hidden;
-    position: relative;
     display: flex;
+    align-items: center;
+    justify-content: center;
 `;
 
 const ModalBackgroundimg = styled.img`
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: 100%;
 `;
 
 const ModalBackground = styled.div`
@@ -240,6 +242,7 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
 
     const openModal = (project: Project) => {
         setSelectProject(project);
+
         setModalOpen(true);
     };
 

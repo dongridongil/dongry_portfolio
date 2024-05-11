@@ -8,8 +8,8 @@ import Coinimg from '../../asset/imgs/coinapp.png';
 import CoinBackimg from '../../asset/imgs/coinback.png';
 import Shopimg from '../../asset/imgs/Shop.png';
 import ShopBackimg from '../../asset/imgs/Shopback.png';
-import Vuestaimg from '../../asset/imgs/Vuesta.png';
-import VuestaBackimg from '../../asset/imgs/vuestarback.png';
+import Vuestaimg from '../../asset/imgs/vuestagrm.png';
+import VuestaBackimg from '../../asset/imgs/vueback.png';
 
 export interface Project {
     id: number;
