@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# 프론트엔드 개발 취업 을 위한 포트폴리오!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 개발환경
 
-## Available Scripts
 
-In the project directory, you can run:
+* 프로젝트 환경설정 React 프로젝트(CRA) 설치 : `npx create-react-app "앱이름"`  <br />
 
-### `npm start`
+*  React 중앙집중식 상태 관리 라이브러리 Recoil 설치 : `npm install recoil` <br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+*  페이지 간의 네비게이션을 위한 React-Router 설치 :` npm install react-router`  <br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+*  스타일링을 위한 CSS-in-JS 라이브러리 Styled-Components 설치 : `npm install styled-components`  <br />
 
-### `npm test`
+*  애니메이션을 위한 Framer-Motion 라이브러리 설치 :` npm install framer-motion `  <br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*  터치 슬라이더를 위한 Swiper 라이브러리 설치 : `npm install swiper`  <br />
 
-### `npm run build`
+*  스크롤 시 애니메이션을 위한 react-animation-on-scroll 설치 : `npm install react-animation-on-scroll` <br />
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+*  브라우저 라우팅을 위한 react-router-dom 설치 :` npm install react-router-dom`  <br />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+##  프로젝트 구조
 
-### `npm run eject`
+```
+src
+├── assets              # static 폴더
+│   └── imgs/*          # image 폴더
+├── components          # 리액트 컴포넌트 폴더
+│   ├── Header/*        # Header 폴더
+│   │   └── Header.tsx  # Header 컴포넌트
+│   ├── Main/*          # 포트폴리오 메인 폴더
+│   │   ├── About.tsx       # 나에 대한 정보 컴포넌트
+│   │   ├── Projects.tsx    # 프로젝트 에 대한 설명 컴포넌트
+│   │   ├── ProjectsData.tsx # 프로젝트 관련 데이터 컴포넌트
+│   │   ├── Skills.tsx      # 스킬 에 대한 설명 컴포넌트
+│   │   └── SkillsData.tsx  # 스킬 관련 데이터 컴포넌트
+│   ├── Footer/*        # footer 폴더
+│   │   └── Footer.tsx  # footer 컴포넌트
+├── Routes/*            # 리액트 라우터 폴더
+│   └── Home.tsx        # 메인페이지 컴포넌트
+├── App.tsx             # 컴포넌트 관계 정의 컴포넌트
+├── index.tsx           # 메인 컴포넌트
+├── GlobalComponents.tsx # 홈페이지 전역으로 사용될 스타일 컴포넌트
+└── theme.ts            # 컬러 설정
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 웹 화면 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 홈 
+![image](https://github.com/dongridongil/react-port/assets/108976641/a53993f2-b42d-4642-9aa5-0ceaebe16110)
 
-## Learn More
+### 프로젝트 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![image](https://github.com/dongridongil/react-port/assets/108976641/d6d7508f-7aed-48b9-a735-f83cb35deb57)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### about 
 
-### Code Splitting
+![image](https://github.com/dongridongil/react-port/assets/108976641/9f5a3573-e4d3-49ae-b2cb-453ef6c7badf)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### skill
 
-### Analyzing the Bundle Size
+![image](https://github.com/dongridongil/react-port/assets/108976641/d5d54239-3fad-42ac-9d07-2dc70b2b4e89)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
