@@ -8,6 +8,8 @@ import { createGlobalStyle } from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.css';
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -56,10 +58,12 @@ table {
   border-spacing: 0;
 }
 * {
+  margin: 0;
+  padding:0;
   box-sizing: border-box;
 }
 body {
-  font-family: "Black Han Sans", sans-serif;
+  font-family: 'Public Sans', sans-serif;
   font-weight: 400;
   font-style: normal;
   /* background:linear-gradient(200deg,#ffffff,#cdcbcb); */

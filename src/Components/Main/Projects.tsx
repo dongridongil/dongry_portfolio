@@ -51,6 +51,7 @@ const Image = styled.img`
     width: 100%;
     height: 100%;
     background-image: cover;
+    object-fit: cover;
 `;
 
 const ProjectItem = styled.li`
@@ -58,7 +59,8 @@ const ProjectItem = styled.li`
     position: relative;
     cursor: pointer;
     &:hover ${Image} {
-        opacity: 0.3;
+        opacity: 0;
+        transition: opacity 1s ease;
     }
 
     &:hover ${Overlay} {
@@ -70,8 +72,8 @@ const Name = styled.p`
     position: absolute;
     text-align: center;
     font-weight: 600;
-    font-size: 26px;
-    top: 60px;
+    font-size: 30px;
+    top: 80px;
 `;
 
 const Skill = styled.p`
@@ -80,7 +82,7 @@ const Skill = styled.p`
     text-align: center;
     font-size: 20px;
     color: #e31b6d;
-    top: 90px;
+    top: 120px;
 `;
 const LearnMoreButton = styled.button`
     width: 50%;
@@ -140,6 +142,7 @@ const ModalImg = styled.div<ModalImgProps>`
 `;
 
 const ModalBackgroundimg = styled.img`
+    object-fit: cover;
     width: 100%;
     height: 100%;
 `;
@@ -217,6 +220,19 @@ const TitleContainer = styled.div`
     left: 45px;
 `;
 
+const Back = styled.div`
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #262626;
+    background-image: linear-gradient(to right, #333 1px, transparent 1px),
+        linear-gradient(to bottom, #333 1px, transparent 1px);
+    background-size: 5vh 5vh;
+`;
+
+///////////////////////////////////
 const Projects = ({ projectsData }: { projectsData: Project[] }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [selectProject, setSelectProject] = useState<Project | null>(null);
@@ -258,71 +274,70 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
     };
     return (
         <section id="project">
-            <Backcolor>
-                <GWrapper>
-                    <GInner>
-                        <SectionHeader text=" PROJECT" />
-                        <GArea>
-                            <Tabs
-                                defaultActiveKey="all"
-                                id="justify-tab-example"
-                                className="mb-3 fs-4 fw-bold"
-                                justify
-                                onSelect={(tab) => tab !== null && tabChange(tab)}
-                            >
-                                <Tab eventKey="all" title="All"></Tab>
-                                <Tab eventKey="react" title="React"></Tab>
-                                <Tab eventKey="js" title="Vanilla JS"></Tab>
-                                <Tab eventKey="vue" title="Vue"></Tab>
-                            </Tabs>
+            <Back>
+                <GInner>
+                    <SectionHeader text=" PROJECT" />
+                    <GArea>
+                        <Tabs
+                            style={{ color: 'red' }}
+                            defaultActiveKey="all"
+                            id="justify-tab-example"
+                            className="mb-3 fs-4 fw-bold"
+                            justify
+                            onSelect={(tab) => tab !== null && tabChange(tab)}
+                        >
+                            <Tab eventKey="all" title="All"></Tab>
+                            <Tab eventKey="react" title="React"></Tab>
+                            <Tab eventKey="js" title="Vanilla JS"></Tab>
+                            <Tab eventKey="vue" title="Vue"></Tab>
+                        </Tabs>
 
-                            <Contents>
-                                {filteredProjects().map((project) => (
-                                    <ProjectItem key={project.id}>
-                                        <ImageContainer>
-                                            <Image src={project.imageUrl} alt="Projects" />
-                                            <Overlay>
-                                                <Name>{project.name}</Name>
-                                                <Skill>{project.skill}</Skill>
+                        <Contents>
+                            {filteredProjects().map((project) => (
+                                <ProjectItem key={project.id}>
+                                    <ImageContainer>
+                                        <Image src={project.imageUrl} alt="Projects" />
+                                        <Overlay>
+                                            <Name>{project.name}</Name>
+                                            <Skill>{project.skill}</Skill>
 
-                                                <LearnMoreButton onClick={() => openModal(project)}>
-                                                    LEARN MORE
-                                                </LearnMoreButton>
-                                            </Overlay>
-                                        </ImageContainer>
-                                    </ProjectItem>
-                                ))}
-                            </Contents>
-                        </GArea>
-                    </GInner>
-                    {modalOpen && (
-                        <ModalBackground onClick={closeModalOnclick}>
-                            <ModalWrapper>
-                                <ModalImg>
-                                    <ModalBackgroundimg src={selectProject?.backimage} />
-                                </ModalImg>
-                                <ModalContent>
-                                    <TitleContainer>
-                                        <Title>{selectProject?.title}</Title>
-                                        <Underscore />
-                                    </TitleContainer>
-                                    <Summary>{selectProject?.summary}</Summary>
+                                            <LearnMoreButton onClick={() => openModal(project)}>
+                                                LEARN MORE
+                                            </LearnMoreButton>
+                                        </Overlay>
+                                    </ImageContainer>
+                                </ProjectItem>
+                            ))}
+                        </Contents>
+                    </GArea>
+                </GInner>
+            </Back>
+            {modalOpen && (
+                <ModalBackground onClick={closeModalOnclick}>
+                    <ModalWrapper>
+                        <ModalImg>
+                            <ModalBackgroundimg src={selectProject?.backimage} />
+                        </ModalImg>
+                        <ModalContent>
+                            <TitleContainer>
+                                <Title>{selectProject?.title}</Title>
+                                <Underscore />
+                            </TitleContainer>
+                            <Summary>{selectProject?.summary}</Summary>
 
-                                    <a href={selectProject?.url} target="_blank">
-                                        <ModalButton>
-                                            <IoEnter />
-                                            GO HOME
-                                        </ModalButton>
-                                    </a>
-                                    <CloseButton onClick={closeModal}>
-                                        <IoMdClose />
-                                    </CloseButton>
-                                </ModalContent>
-                            </ModalWrapper>
-                        </ModalBackground>
-                    )}
-                </GWrapper>
-            </Backcolor>
+                            <a href={selectProject?.url} target="_blank">
+                                <ModalButton>
+                                    <IoEnter />
+                                    GO HOME
+                                </ModalButton>
+                            </a>
+                            <CloseButton onClick={closeModal}>
+                                <IoMdClose />
+                            </CloseButton>
+                        </ModalContent>
+                    </ModalWrapper>
+                </ModalBackground>
+            )}
         </section>
     );
 };

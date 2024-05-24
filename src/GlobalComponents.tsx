@@ -75,6 +75,7 @@ const SectionName = styled.div`
     justify-content: center;
     font-size: 6rem;
     font-weight: 700;
+    color: white;
 
     @media (max-width: 1200px) {
         font-size: 6rem;

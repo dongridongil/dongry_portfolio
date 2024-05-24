@@ -3,7 +3,7 @@ import Gitimg from '../../asset/imgs/git-hub.png';
 import Velogimg from '../../asset/imgs/velogg.png';
 
 const FooterContainer = styled.footer`
-    background-color: #358aa4;
+    background-color: #383f43;
     color: white;
     text-align: center;
     padding: 100px 0;

@@ -10,7 +10,8 @@ import Shopimg from '../../asset/imgs/Shop.png';
 import ShopBackimg from '../../asset/imgs/Shopback.png';
 import Vuestaimg from '../../asset/imgs/vuestagrm.png';
 import VuestaBackimg from '../../asset/imgs/vueback.png';
-
+import Photosplashimg from '../../asset/imgs/photosplash.png';
+import PhotosplashBackimg from '../../asset/imgs/photosplashback1.png';
 export interface Project {
     id: number;
     imageUrl: string;
@@ -24,6 +25,20 @@ export interface Project {
 
 const ProjectsData: Project[] = [
     {
+        id: 4,
+        imageUrl: Photosplashimg,
+        backimage: PhotosplashBackimg,
+        name: 'Photo Splash',
+        title: 'Photo Splash ',
+        skill: 'React ,Type Script, Vite',
+        summary: `Unsplash 이미지 사이트를 참고 및 api 활용 하여 Photo Splash
+        라는 이미지 저장 사이트 를 만들어 보았습니다.
+        처음 활용해보는 vite , scss , toast 를 배우면서 재밌고 
+        의미있는 시간들이였습니다. `,
+        url: 'https://dongridongil.github.io/reactalbum/',
+    },
+
+    {
         id: 1,
         imageUrl: Dongfliximg,
         backimage: DongflixBackimg,
@@ -33,39 +48,6 @@ const ProjectsData: Project[] = [
         summary: `노마드 코더의 React JS 마스터클래스 졸업작품 인 넷플릭스 클론입니다. 
         그동안 배워온 React 기술들을 총집합하여 사이트를 만들어보았습니다.   `,
         url: 'https://dongridongil.github.io/dongfilx_clone/',
-    },
-    {
-        id: 5,
-        imageUrl: Momentimg,
-        backimage: MomentBackimg,
-        name: 'MOMENTUM',
-        title: '일정관리 앱',
-        skill: 'Vanilla JS',
-        summary: ` Chrome의 일정관리 앱인 momentum을 바닐라JS 를 통해 만들어보았습니다 . 
-            날씨와 온도정보를 제공하며 localStorage 을 통해 로컬환경에서 
-            일정을 저장하여 관리 할수있는 앱입니다. `,
-        url: 'https://dongridongil.github.io/momentem/',
-    },
-    {
-        id: 3,
-        imageUrl: Movieimg,
-        backimage: MovieBackimg,
-        name: 'Movie Information Site',
-        title: '다양한 영화정보 소개사이트',
-        skill: 'React  , Type Script',
-        summary: ' 다양한 해외 영화들을 확인할수 있고 디테일 정보도 알아갈수 있는 앱입니다.  ',
-        url: 'https://dongridongil.github.io/moviepracs/',
-    },
-    {
-        id: 4,
-        imageUrl: Coinimg,
-        backimage: CoinBackimg,
-        name: 'Coin Information Site ',
-        title: '코인정보 사이트',
-        skill: 'React  , Type Script',
-        summary: ` 다양한 코인들의 정보와 순위를 제공하며 한눈에 확인할수있는 차트와
-             최대 1년전부터 30분전까지 코인의 상승,하락장을 체크 할수있는 사이트입니다.  `,
-        url: 'https://dongridongil.github.io/coin_app/',
     },
     {
         id: 2,
@@ -79,6 +61,30 @@ const ProjectsData: Project[] = [
                     `,
         url: 'https://dongridongil.github.io/shop/',
     },
+
+    {
+        id: 3,
+        imageUrl: Movieimg,
+        backimage: MovieBackimg,
+        name: 'Movie Information Site',
+        title: '다양한 영화정보 소개사이트',
+        skill: 'React  , Type Script',
+        summary: ' 다양한 해외 영화들을 확인할수 있고 디테일 정보도 알아갈수 있는 앱입니다.  ',
+        url: 'https://dongridongil.github.io/moviepracs/',
+    },
+
+    {
+        id: 5,
+        imageUrl: Momentimg,
+        backimage: MomentBackimg,
+        name: 'MOMENTUM',
+        title: '일정관리 앱',
+        skill: 'Vanilla JS',
+        summary: ` Chrome의 일정관리 앱인 momentum을 바닐라JS 를 통해 만들어보았습니다 . 
+            날씨와 온도정보를 제공하며 localStorage 을 통해 로컬환경에서 
+            일정을 저장하여 관리 할수있는 앱입니다. `,
+        url: 'https://dongridongil.github.io/momentem/',
+    },
     {
         id: 6,
         imageUrl: Vuestaimg,
@@ -90,7 +96,7 @@ const ProjectsData: Project[] = [
          기능들 (props, mitt , vuex ,ajax요청, composition API) 사용법에 대해 
         많이 공부할수있는 시간이였습니다.
                     `,
-        url: 'https://dongridongil.github.io/',
+        url: 'https://dongridongil.github.io/vuesta/',
     },
 ];
 export default ProjectsData;

@@ -1,144 +1,201 @@
-import styled from 'styled-components';
-import { GArea, GInner, GWrapper, SectionHeader } from '../../GlobalComponents';
-import DI from '../../asset/imgs/dongil.png';
-import di from '../../asset/imgs/realdongil.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import styled, { keyframes } from 'styled-components';
 
-const Wrapper = styled(GWrapper)`
+const Back = styled.div`
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #262626;
+    background-image: linear-gradient(to right, #333 1px, transparent 1px),
+        linear-gradient(to bottom, #333 1px, transparent 1px);
+    background-size: 5vh 5vh;
+`;
+const H2 = styled.h2`
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    margin-bottom: 260px;
+    position: absolute;
+    color: #fff;
+    font-size: 10em;
+    font-weight: 700;
+    padding: 0 100px;
+`;
+
+const Im = styled.h2`
+    color: #fff;
+    font-size: 0.8em;
+    font-weight: 600;
+    padding: 50 20px;
+    margin-bottom: 20px;
+`;
+
+const displayanimation = keyframes`
+  0% {
+    display: inline-block;
+  }
+  33.33%,100% {
+    display: none;
+  }
+
+`;
+const textanimation = keyframes`
+
+  0%,10%,100%{
+    width:0%
+  }
+  70%,90% {
+    width:100%;
+  }
+
+`;
+
+interface SpanProps {
+    index: number;
+    'data-text': string;
+}
+
+const Span = styled.span<SpanProps>`
+    --i: ${(props) => props.index || 0};
+    position: relative;
+    margin-left: 50px;
+    color: rgba(255, 255, 255, 0.1);
+    animation: ${displayanimation} 12s infinite;
+    animation-delay: calc(-4s * var(--i));
+
     &::before {
-        content: '';
+        content: attr(data-text);
         position: absolute;
-        top: 0rem;
+        top: 0;
         left: 0;
         width: 100%;
-        height: 18rem;
+        white-space: nowrap; /* 한 줄로 유지 */
+        color: #01fe87;
+        overflow: hidden;
+        border-right: 4px solid #01fe87;
+        filter: drop-shadow(0 0 5px #01fe87) drop-shadow(0 0 15px #01fe87);
+        animation: ${textanimation} 4s linear infinite;
     }
 `;
 
-const Contents = styled(GArea)`
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 300px;
-`;
-
-const Area = styled.div``;
-
-const ImgArea = styled(Area)`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    img {
-        display: block;
-        width: 500px;
-    }
-
-    @media (max-width: 500px) {
-        img {
-            width: 50%;
-        }
-    }
-`;
-
-const TextArea = styled(Area)``;
-
-const Title = styled.h2`
-    font-size: 3.7rem;
-    font-weight: 700;
-`;
-
-const Paragraph = styled.p`
-    padding-top: 1.2rem;
-    font-size: 2rem;
-    font-weight: 500;
-`;
-
-const IconWrapper = styled.div`
+/* 입장 버튼*/
+const Enter = styled.a`
     position: absolute;
-    bottom: 27%;
-    right: 60%;
-`;
 
-const Contact = styled.span`
-    width: 100px;
-    height: 50px;
-
-    bottom: 360px;
-    border-radius: 10px;
-    border: none;
-    background-color: #dae028;
-    color: white;
-    position: absolute;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 500;
-    padding: 15px;
-    cursor: pointer;
-    transition: all 0.5s ease-in-out;
+    margin-top: 700px;
+    display: inline-block;
+    padding: 45px 60px;
+    color: #01fe87;
+    text-transform: 4px;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 2.5rem;
+    overflow: hidden;
+    transition: 0.2s;
+    font-weight: 600;
     &:hover {
-        font-size: 19px;
-        color: white;
-        background-color: #358aa4;
+        color: #ffffff;
+        background: #01fe87;
+        box-shadow: 0 0 10px #01fe87, 0 0 40px #01fe87, 0 0 80px #01fe87;
+        transition-delay: 1s;
+    }
+    span {
+        position: absolute;
+        display: block;
+    }
+
+    span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, #01fe87);
+    }
+    &:hover span:nth-child(1) {
+        left: 100%;
+        transition: 1s;
+    }
+    span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg, transparent, #01fe87);
+    }
+    &:hover span:nth-child(3) {
+        right: 100%;
+        transition: 1s;
+        transition-delay: 0.5s;
+    }
+
+    span:nth-child(2) {
+        top: -100;
+        right: 0%;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg, transparent, #01fe87);
+    }
+    &:hover span:nth-child(2) {
+        top: 100%;
+        transition: 1s;
+        transition-delay: 0.25s;
+    }
+
+    span:nth-child(4) {
+        bottom: -100;
+        right: 0%;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg, transparent, #01fe87);
+    }
+    &:hover span:nth-child(4) {
+        bottom: 100%;
+        transition: 1s;
+        transition-delay: 0.75s;
     }
 `;
 
 const Main = () => {
-    const [isHover, setIsHover] = useState(false);
+    const [enter, setEnter] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setEnter(true);
+        }, 2000);
+        // 클린 업코드 //
+        return () => clearTimeout(timer);
+    }, []);
     return (
         <section id="about">
-            <Wrapper>
-                <GInner>
-                    <SectionHeader text="ABOUT" />
-                    <Contents>
-                        <ImgArea onMouseOver={() => setIsHover(true)} onMouseOut={() => setIsHover(false)}>
-                            {!isHover && ( //호버가되면 클릭이미지안보임
-                                <IconWrapper></IconWrapper>
-                            )}
-
-                            {isHover ? <img src={di} /> : <img src={DI} />}
-                        </ImgArea>
-
-                        <TextArea>
-                            <Title>
-                                안녕하세요!
-                                <br /> 웹 개발자 김동일 입니다.
-                            </Title>
-                            <Paragraph>
-                                <br />
-                                백엔드 개발자로 시작하여 풀스택을 지향하는 개발자로 성장하기
-                                <br />
-                                <br />
-                                위해 프론트엔드 를 집중적으로 공부 중입니다.
-                                <br />
-                                <br />
-                                <span style={{ color: '#e31b6d', fontSize: '40px' }}>React </span>와{' '}
-                                <span style={{ color: '#e31b6d', fontSize: '40px' }}>Vue JS</span> 그리고{' '}
-                                <span style={{ color: '#e31b6d', fontSize: '40px' }}>TypeScript</span> 등을 습득하고
-                                있으며,
-                                <br />
-                                <br />
-                                필요한 기술들을 추가적으로 학습 중입니다.
-                                <br />
-                                <br />
-                                아래는 그동안 제가 작업한 결과물과 사용가능한 기술스택입니다.
-                                <br />
-                                <br />
-                                감사합니다 💘
-                                <Contact style={{ left: '1100px' }}>
-                                    <a href="https://github.com/dongridongil" target="blank">
-                                        GitHub
-                                    </a>
-                                </Contact>
-                                <Contact style={{ left: '1220px' }}>
-                                    <a href="https://velog.io/@ehddlfwkd/posts" target="blank">
-                                        Velog
-                                    </a>
-                                </Contact>
-                            </Paragraph>
-                        </TextArea>
-                    </Contents>
-                </GInner>
-            </Wrapper>
+            <div>
+                <Back>
+                    {/* 자기 소개 부분  */}
+                    <H2>
+                        <Im>i'm</Im>
+                        <Span index={0} data-text="안녕하세요 웹 개발자">
+                            안녕하세요 웹 개발자
+                        </Span>
+                        <Span index={2} data-text="김동일 입니다.">
+                            김동일 입니다.
+                        </Span>
+                        <Span index={1} data-text="잘 부탁 드립니다 😎">
+                            잘 부탁 드립니다 😎
+                        </Span>
+                    </H2>
+                    {/* 입장 버튼*/}
+                    {enter && (
+                        <Enter href="#home">
+                            <span />
+                            <span />
+                            <span />
+                            <span />
+                            ENTER
+                        </Enter>
+                    )}
+                </Back>
+            </div>
         </section>
     );
 };

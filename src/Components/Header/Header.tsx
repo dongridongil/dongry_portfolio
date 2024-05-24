@@ -26,19 +26,20 @@ const Tab = styled.div`
     padding: 30px;
     cursor: pointer;
     &:hover {
+        font-size: 22px;
         font-weight: 1000;
-        color: #e31b6d;
+        color: #c9c9c9;
     }
 `;
 
 const navVar = {
     top: {
-        backgroundColor: 'rgba(0,0,0,0)',
+        backgroundColor: '#383f43',
         transition: { duration: 0.5 },
     },
 
     scroll: {
-        backgroundColor: '#358aa4',
+        backgroundColor: 'rgba(0,0,0,0)',
         transition: { duration: 0.5 },
     },
 };

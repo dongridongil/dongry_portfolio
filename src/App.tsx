@@ -14,9 +14,9 @@ function App() {
                     path={'/'}
                     element={
                         <>
-                            <Home />
-                            <Header />
                             <About />
+                            <Home />
+
                             <Projects projectsData={[]} />
                             <Skills />
                             <Footer />
