@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Back = styled.div`
     display: flex;
@@ -157,6 +159,17 @@ const Enter = styled.a`
     }
 `;
 
+const pageMove = {
+    initial: { opacity: 0, x: '100vw' },
+    in: { opacity: 1, x: 0 },
+    out: { opacity: 0, x: '-100vw' },
+};
+
+const pageTransition = {
+    type: 'tween',
+    duration: 0.5,
+};
+
 const Main = () => {
     const [enter, setEnter] = useState(false);
 
@@ -168,35 +181,35 @@ const Main = () => {
         return () => clearTimeout(timer);
     }, []);
     return (
-        <section id="about">
-            <div>
-                <Back>
-                    {/* 자기 소개 부분  */}
-                    <H2>
-                        <Im>i'm</Im>
-                        <Span index={0} data-text="안녕하세요 웹 개발자">
-                            안녕하세요 웹 개발자
-                        </Span>
-                        <Span index={2} data-text="김동일 입니다.">
-                            김동일 입니다.
-                        </Span>
-                        <Span index={1} data-text="잘 부탁 드립니다 😎">
-                            잘 부탁 드립니다 😎
-                        </Span>
-                    </H2>
-                    {/* 입장 버튼*/}
-                    {enter && (
-                        <Enter href="#home">
+        <motion.div initial="initial" animate="in" exit="out" variants={pageMove} transition={pageTransition}>
+            <Back>
+                {/* 자기 소개 부분  */}
+                <H2>
+                    <Im>i'm</Im>
+                    <Span index={0} data-text="안녕하세요 웹 개발자">
+                        안녕하세요 웹 개발자
+                    </Span>
+                    <Span index={2} data-text="김동일 입니다.">
+                        김동일 입니다.
+                    </Span>
+                    <Span index={1} data-text="잘 부탁 드립니다 😎">
+                        잘 부탁 드립니다 😎
+                    </Span>
+                </H2>
+                {/* 입장 버튼*/}
+                {enter && (
+                    <Enter>
+                        <Link to="/projects">
                             <span />
                             <span />
                             <span />
                             <span />
                             ENTER
-                        </Enter>
-                    )}
-                </Back>
-            </div>
-        </section>
+                        </Link>
+                    </Enter>
+                )}
+            </Back>
+        </motion.div>
     );
 };
 

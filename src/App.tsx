@@ -1,29 +1,10 @@
-import { BrowserRouter as HashRouter, Routes, Route } from 'react-router-dom'; //
+import { BrowserRouter as HashRouter } from 'react-router-dom';
+import AnimatedRoutes from './animateroute';
 
-import Home from './Routes/Home';
-import About from './Components/Main/About';
-import Skills from './Components/Main/Skills';
-import Projects from './Components/Main/Projects';
-import Footer from './Components/Footer/Footer';
-import Header from './Components/Header/Header';
 function App() {
     return (
         <HashRouter basename={process.env.PUBLIC_URL}>
-            <Routes>
-                <Route
-                    path={'/'}
-                    element={
-                        <>
-                            <About />
-                            <Home />
-
-                            <Projects projectsData={[]} />
-                            <Skills />
-                            <Footer />
-                        </>
-                    }
-                />
-            </Routes>
+            <AnimatedRoutes />
         </HashRouter>
     );
 }

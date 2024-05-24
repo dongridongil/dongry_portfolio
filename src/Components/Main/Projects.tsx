@@ -4,9 +4,7 @@ import React, { useState } from 'react';
 import ProjectsData, { Project } from './ProjectsData';
 import { IoMdClose } from 'react-icons/io';
 import { IoEnter } from 'react-icons/io5';
-// import { Nav, Tab } from 'react-bootstrap';
-import Tab from 'react-bootstrap/Tab';
-import Tabs from 'react-bootstrap/Tabs';
+import { Link } from 'react-router-dom';
 
 const Contents = styled.ul`
     display: flex;
@@ -18,23 +16,19 @@ const Contents = styled.ul`
     margin-bottom: 100px;
 `;
 
-const Backcolor = styled.div`
-    background-color: #f5f5f5;
-`;
-
 const Overlay = styled.div`
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 1s ease;
 `;
 const ImageContainer = styled.div`
     position: relative;
@@ -44,6 +38,7 @@ const ImageContainer = styled.div`
     margin-bottom: 50px;
     margin-left: 50px;
     border-radius: 30px;
+    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px;
 `;
 
 const Image = styled.img`
@@ -222,7 +217,7 @@ const TitleContainer = styled.div`
 
 const Back = styled.div`
     display: flex;
-    height: 100vh;
+
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -232,29 +227,37 @@ const Back = styled.div`
     background-size: 5vh 5vh;
 `;
 
+const LeftArrow = styled.div`
+    width: 100px;
+    height: 100px;
+    transition: 0.5s;
+    float: left;
+    box-shadow: -2px 2px 0 rgba(255, 255, 255, 1);
+    transform: rotate(45deg);
+    margin-left: 200px;
+    cursor: pointer;
+    &:hover {
+        box-shadow: -20px 20px 0 #01fe87;
+    }
+`;
+const RightArrow = styled.div`
+    width: 100px;
+    height: 100px;
+    transition: 0.5s;
+    float: left;
+    margin-right: 200px;
+    box-shadow: -2px 2px 0 rgba(255, 255, 255, 1);
+    transform: rotate(225deg);
+    cursor: pointer;
+    &:hover {
+        box-shadow: -20px 20px 0 #01fe87;
+    }
+`;
+
 ///////////////////////////////////
 const Projects = ({ projectsData }: { projectsData: Project[] }) => {
     const [modalOpen, setModalOpen] = useState(false);
     const [selectProject, setSelectProject] = useState<Project | null>(null);
-
-    const [activeTab, setActivetab] = useState<string>('all');
-
-    const tabChange = (tab: string) => {
-        setActivetab(tab);
-    };
-
-    const filteredProjects = (): Project[] => {
-        if (activeTab === 'all') {
-            return ProjectsData;
-        } else if (activeTab === 'react') {
-            return ProjectsData.filter((project) => project.id >= 1 && project.id <= 4);
-        } else if (activeTab === 'js') {
-            return ProjectsData.filter((project) => project.id === 5);
-        } else if (activeTab === 'vue') {
-            return ProjectsData.filter((project) => project.id === 6);
-        }
-        return [];
-    };
 
     const openModal = (project: Project) => {
         setSelectProject(project);
@@ -275,25 +278,15 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
     return (
         <section id="project">
             <Back>
+                <Link to={'/'}>
+                    <LeftArrow />
+                </Link>
+
                 <GInner>
                     <SectionHeader text=" PROJECT" />
                     <GArea>
-                        <Tabs
-                            style={{ color: 'red' }}
-                            defaultActiveKey="all"
-                            id="justify-tab-example"
-                            className="mb-3 fs-4 fw-bold"
-                            justify
-                            onSelect={(tab) => tab !== null && tabChange(tab)}
-                        >
-                            <Tab eventKey="all" title="All"></Tab>
-                            <Tab eventKey="react" title="React"></Tab>
-                            <Tab eventKey="js" title="Vanilla JS"></Tab>
-                            <Tab eventKey="vue" title="Vue"></Tab>
-                        </Tabs>
-
                         <Contents>
-                            {filteredProjects().map((project) => (
+                            {ProjectsData.map((project) => (
                                 <ProjectItem key={project.id}>
                                     <ImageContainer>
                                         <Image src={project.imageUrl} alt="Projects" />
@@ -311,6 +304,10 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
                         </Contents>
                     </GArea>
                 </GInner>
+                <Link to={'/skills'}>
+                    {' '}
+                    <RightArrow />{' '}
+                </Link>
             </Back>
             {modalOpen && (
                 <ModalBackground onClick={closeModalOnclick}>
