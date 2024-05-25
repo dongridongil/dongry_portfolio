@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-port/static/css/main.9a6d1f18.css",
-    "main.js": "/react-port/static/js/main.32bcf9ed.js",
+    "main.js": "/react-port/static/js/main.a594a15f.js",
     "static/media/photosplashback1.png": "/react-port/static/media/photosplashback1.979a82ac586b1a680e23.png",
     "static/media/netflixback.png": "/react-port/static/media/netflixback.f8a73530891068f30aa1.png",
     "static/media/dongflix.png": "/react-port/static/media/dongflix.89c57be57075f9013baa.png",
@@ -19,19 +19,18 @@
     "static/media/laravel.svg": "/react-port/static/media/laravel.50db3a8daf02162430f736ce23c44dc3.svg",
     "static/media/react.svg": "/react-port/static/media/react.6de741293691020ff815785ac4aeedc4.svg",
     "static/media/cloudflare.svg": "/react-port/static/media/cloudflare.f8f12e301d1e6ff7ae94c80a33ee0dab.svg",
-    "static/media/db.svg": "/react-port/static/media/db.24c9780f88ec8b3611d814151676066b.svg",
     "static/media/typescript.svg": "/react-port/static/media/typescript.acd3dc5990dff0f9154a7c85c2f205fb.svg",
     "static/media/nginx.svg": "/react-port/static/media/nginx.de99e85c3105c3885dd25385ef47c0f8.svg",
     "static/media/javascript.svg": "/react-port/static/media/javascript.9243d70f0676d577ad5fc591dfc6009f.svg",
-    "static/media/git.svg": "/react-port/static/media/git.cf14d633d663c12eed07f375995a3398.svg",
     "index.html": "/react-port/index.html",
+    "static/media/git.svg": "/react-port/static/media/git.cf14d633d663c12eed07f375995a3398.svg",
     "static/media/html5.svg": "/react-port/static/media/html5.366c7a1ace25f34184363f46c787822d.svg",
     "static/media/css3.svg": "/react-port/static/media/css3.362b04c907d99f28a40f72feec1bba57.svg",
     "main.9a6d1f18.css.map": "/react-port/static/css/main.9a6d1f18.css.map",
-    "main.32bcf9ed.js.map": "/react-port/static/js/main.32bcf9ed.js.map"
+    "main.a594a15f.js.map": "/react-port/static/js/main.a594a15f.js.map"
   },
   "entrypoints": [
     "static/css/main.9a6d1f18.css",
-    "static/js/main.32bcf9ed.js"
+    "static/js/main.a594a15f.js"
   ]
 }
