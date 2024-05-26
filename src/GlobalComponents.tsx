@@ -1,13 +1,7 @@
-import React from 'react';
-import { AnimationOnScroll } from 'react-animation-on-scroll';
 import styled from 'styled-components';
 
 export function SectionHeader({ text }: { text: string }) {
-    return (
-        <AnimationOnScroll initiallyVisible={false} animateIn="animate__bounce" delay={10}>
-            <SectionName>{text}</SectionName>
-        </AnimationOnScroll>
-    );
+    return <SectionName>{text}</SectionName>;
 }
 
 /**
@@ -70,6 +64,7 @@ export const GArea = styled.div`
  * 공통 헤더 이름작성용
  */
 const SectionName = styled.div`
+    margin-top: 5rem;
     margin-bottom: 6rem;
     display: flex;
     justify-content: center;

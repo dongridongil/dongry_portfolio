@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 const Back = styled.div`
     display: flex;
-
     align-items: center;
     justify-content: center;
     min-height: 100vh;
@@ -83,16 +82,16 @@ const Span = styled.span<SpanProps>`
 `;
 
 /* 입장 버튼*/
-const Enter = styled.a`
+const Enter = styled.div`
+    text-decoration: none !important;
     position: absolute;
-
     margin-top: 700px;
     display: inline-block;
     padding: 45px 60px;
     color: #01fe87;
     text-transform: 4px;
     letter-spacing: 4px;
-    text-decoration: none;
+
     font-size: 2.5rem;
     overflow: hidden;
     transition: 0.2s;
@@ -159,6 +158,11 @@ const Enter = styled.a`
     }
 `;
 
+const StyledLink = styled(Link)`
+    text-decoration: none;
+    color: inherit;
+`;
+
 const pageMove = {
     initial: { opacity: 0, x: '100vw' },
     in: { opacity: 1, x: 0 },
@@ -199,13 +203,13 @@ const Main = () => {
                 {/* 입장 버튼*/}
                 {enter && (
                     <Enter>
-                        <Link to="/projects">
+                        <StyledLink to="/projects">
                             <span />
                             <span />
                             <span />
                             <span />
                             ENTER
-                        </Link>
+                        </StyledLink>
                     </Enter>
                 )}
             </Back>

@@ -6,6 +6,13 @@ import App from './App';
 import { darkTheme } from './theme';
 import { createGlobalStyle } from 'styled-components';
 import 'bootstrap/dist/css/bootstrap.css';
+import Cursor from './Cursor';
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"
+    integrity="sha384-BY+fdrpOd3gfeRvTSMT+VUZmA728cfF9Z2G42xpaRkUGu2i3DyzpTURDo5A6CaLK"
+    crossOrigin="anonymous"
+></link>;
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
@@ -29,15 +36,19 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  cursor: none;
+ 
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, main, menu, nav, section {
   display: block;
+ 
 }
 /* HTML5 hidden-attribute fix for newer browsers */
 *[hidden] {
     display: none;
+   
 }
 body {
   line-height: 1;
@@ -57,10 +68,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
 * {
   margin: 0;
   padding:0;
   box-sizing: border-box;
+  
 }
 body {
   font-family: 'Public Sans', sans-serif;
@@ -68,13 +81,16 @@ body {
   font-style: normal;
   /* background:linear-gradient(200deg,#ffffff,#cdcbcb); */
   background-color: white;
+  cursor: none;
 }
 a {
   text-decoration:none;
   color:inherit;
+  cursor: none;
 }
 .nav-link {
   color: #201e1edc; 
+
 }
 `;
 ReactDOM.render(
@@ -83,6 +99,7 @@ ReactDOM.render(
             <ThemeProvider theme={darkTheme}>
                 <GlobalStyle />
                 <App />
+                <Cursor />
             </ThemeProvider>
         </RecoilRoot>
     </React.StrictMode>,

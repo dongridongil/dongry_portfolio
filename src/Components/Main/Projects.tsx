@@ -5,6 +5,7 @@ import ProjectsData, { Project } from './ProjectsData';
 import { IoMdClose } from 'react-icons/io';
 import { IoEnter } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
+import { LeftArrow, RightArrow } from '../util/Utill';
 
 const Contents = styled.ul`
     display: flex;
@@ -89,10 +90,11 @@ const LearnMoreButton = styled.button`
     text-align: center;
     font-size: 16px;
     padding: 10px;
-    cursor: pointer;
+    cursor: none !important;
     transition: all 0.5s ease-in-out;
 
     &:hover {
+        cursor: none !important;
         color: white;
         background-color: #e31b6d;
     }
@@ -143,6 +145,7 @@ const ModalBackgroundimg = styled.img`
 `;
 
 const ModalBackground = styled.div`
+    cursor: pointer;
     position: fixed;
     top: 0;
     left: 0;
@@ -170,11 +173,10 @@ const ModalButton = styled.button`
     left: 45px;
     padding: 12px 30px;
     border: none;
-    cursor: pointer;
     color: white;
     background-color: #e31b6d;
     text-align: center;
-    cursor: pointer;
+
     transition: all 0.5s ease-in-out;
     display: flex;
     align-items: center;
@@ -225,33 +227,6 @@ const Back = styled.div`
     background-image: linear-gradient(to right, #333 1px, transparent 1px),
         linear-gradient(to bottom, #333 1px, transparent 1px);
     background-size: 5vh 5vh;
-`;
-
-const LeftArrow = styled.div`
-    width: 100px;
-    height: 100px;
-    transition: 0.5s;
-    float: left;
-    box-shadow: -2px 2px 0 rgba(255, 255, 255, 1);
-    transform: rotate(45deg);
-    margin-left: 200px;
-    cursor: pointer;
-    &:hover {
-        box-shadow: -20px 20px 0 #01fe87;
-    }
-`;
-const RightArrow = styled.div`
-    width: 100px;
-    height: 100px;
-    transition: 0.5s;
-    float: left;
-    margin-right: 200px;
-    box-shadow: -2px 2px 0 rgba(255, 255, 255, 1);
-    transform: rotate(225deg);
-    cursor: pointer;
-    &:hover {
-        box-shadow: -20px 20px 0 #01fe87;
-    }
 `;
 
 ///////////////////////////////////
