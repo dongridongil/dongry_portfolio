@@ -34,13 +34,6 @@ const Cursor = styled.div<{ x: number; y: number }>`
         background: #0f0;
         transform-origin: top;
         transform: rotate(315deg);
-
-        /* left: -2.5px;
-        width: 5px;
-        height: 40px;
-        background: #0f0;
-        transform-origin: top;
-        transform: rotate(315deg); */
     }
 `;
 

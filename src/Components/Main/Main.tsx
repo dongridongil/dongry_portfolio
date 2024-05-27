@@ -8,10 +8,10 @@ const Back = styled.div`
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background: #262626;
+    /* background: #262626;
     background-image: linear-gradient(to right, #333 1px, transparent 1px),
         linear-gradient(to bottom, #333 1px, transparent 1px);
-    background-size: 5vh 5vh;
+    background-size: 5vh 5vh;  */
 `;
 const H2 = styled.h2`
     /* display: flex;
@@ -44,7 +44,7 @@ const displayanimation = keyframes`
 `;
 const textanimation = keyframes`
 
-  0%,10%,100%{
+  0%,10%{
     width:0%
   }
   70%,90% {
@@ -63,8 +63,8 @@ const Span = styled.span<SpanProps>`
     position: relative;
     margin-left: 50px;
     color: rgba(255, 255, 255, 0.1);
-    animation: ${displayanimation} 12s infinite;
-    animation-delay: calc(-4s * var(--i));
+    animation: ${displayanimation} 9s infinite;
+    animation-delay: calc(-3s * var(--i));
 
     &::before {
         content: attr(data-text);
@@ -77,7 +77,7 @@ const Span = styled.span<SpanProps>`
         overflow: hidden;
         border-right: 4px solid #01fe87;
         filter: drop-shadow(0 0 5px #01fe87) drop-shadow(0 0 15px #01fe87);
-        animation: ${textanimation} 4s linear infinite;
+        animation: ${textanimation} 3s linear infinite;
     }
 `;
 

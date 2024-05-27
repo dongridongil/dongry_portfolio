@@ -5,7 +5,8 @@ import { LeftArrow, RightArrow } from '../util/Utill';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { color } from 'framer-motion';
+import { motion } from 'framer-motion';
+
 const ImgWrapper = styled.div`
     margin-top: -10px;
     min-width: 60px;
@@ -16,6 +17,10 @@ const ImgWrapper = styled.div`
     align-items: center;
     border-radius: 50%;
     font-size: 22px;
+    transition: transform 0.3s ease-in-out;
+    &:hover {
+        transform: scale(1.4) translate(0, -20%);
+    }
 `;
 
 const A = styled.a``;
@@ -36,11 +41,6 @@ const Back = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background: #262626;
-    background-image: linear-gradient(to right, #333 1px, transparent 1px),
-        linear-gradient(to bottom, #333 1px, transparent 1px);
-    background-size: 5vh 5vh;
 `;
 const Inner = styled.div`
     display: flex;
@@ -71,7 +71,7 @@ const Content = styled.div`
     align-items: center;
     flex-direction: column;
     text-align: center;
-    color: white;
+    color: ${(props) => props.theme.textColor};
 
     h2 {
         font-size: 100px;
@@ -96,6 +96,7 @@ const Box = styled.div`
     position: relative;
     padding: 20px 0;
     display: flex;
+    margin-top: 10px;
 `;
 
 const Icon = styled.div`
@@ -123,16 +124,18 @@ const Text = styled.text`
         color: #00bcd4;
     }
     p {
+        color: ${(props) => props.theme.textColor};
         margin-top: -5px;
     }
 `;
 const ContactForm = styled.form`
     display: flex;
     flex-direction: column;
-    color: black;
+    color: ${(props) => props.theme.textColor};
     width: 50%;
     padding: 40px;
     background: #fff;
+    border: 1px solid;
     h2 {
         font-size: 30px;
         color: #333;
@@ -183,91 +186,105 @@ const InputBox = styled.div`
         font-size: 18px;
     }
 `;
+
+const pageMove = {
+    initial: { opacity: 0, x: '100vw' },
+    in: { opacity: 1, x: 0 },
+    out: { opacity: 0, x: '-100vw' },
+};
+
+const pageTransition = {
+    type: 'tween',
+    duration: 0.5,
+};
+
 const Footer = () => {
     return (
-        <Back>
-            <Link to="/skills">
-                {' '}
-                <LeftArrow />
-            </Link>
-            <Content>
-                <h2>Contact Me</h2>
-            </Content>
-            <Inner>
-                <Section>
-                    <Container>
-                        <ContactInfo>
-                            <Box>
-                                <ImgWrapper>
-                                    <A href="https://github.com/dongridongil" target="_blank">
-                                        <Image src={Gitimg} />
-                                    </A>
-                                </ImgWrapper>
-                                <Text>
-                                    <h3>Github </h3>
-                                    <p>Github 주소 입니다.</p>
-                                </Text>
-                            </Box>
-                            <Box>
-                                <ImgWrapper>
-                                    <A href="https://velog.io/@ehddlfwkd/posts" target="_blank">
-                                        <Image src={Velogimg} />
-                                    </A>
-                                </ImgWrapper>
-                                <Text>
-                                    <h3>Velog</h3>
-                                    <p> Velog 주소 입니다.</p>
-                                </Text>
-                            </Box>
-                            <Box>
-                                <Icon>
-                                    <FontAwesomeIcon style={{ color: 'black' }} icon={faPhone} />
-                                </Icon>
-                                <Text>
-                                    <h3>Phone</h3>
-                                    <p>010-9734-9171</p>
-                                </Text>
-                            </Box>
-                            <Box>
-                                <Icon>
-                                    <FontAwesomeIcon style={{ color: 'black' }} icon={faEnvelope} />
-                                </Icon>
-                                <Text>
-                                    <h3>Email</h3>
-                                    <p>ehddlfwkd32@naver.com</p>
-                                </Text>
-                            </Box>
-                        </ContactInfo>
-                        <ContactForm>
-                            <form>
-                                <h2>Send Message</h2>
-                                <InputBox>
-                                    <input type="text" name="" required></input>
-                                    <span>Full Name</span>
-                                </InputBox>
-                                <InputBox>
-                                    <input type="text" name="" required></input>
-                                    <span>Email</span>
-                                </InputBox>
-                                <InputBox>
-                                    <textarea required></textarea>
-                                    <span>Message</span>
-                                </InputBox>
-                                <InputBox>
-                                    <input type="submit" name="" value="Send"></input>
-                                </InputBox>
-                            </form>
-                        </ContactForm>
-                    </Container>
-                </Section>
-            </Inner>
-            <Link to="/">
-                {' '}
-                <RightArrow />
-            </Link>
+        <motion.div initial="initial" animate="in" exit="out" variants={pageMove} transition={pageTransition}>
+            <Back>
+                <Link to="/skills">
+                    {' '}
+                    <LeftArrow />
+                </Link>
+                <Content>
+                    <h2>Contact Me</h2>
+                </Content>
+                <Inner>
+                    <Section>
+                        <Container>
+                            <ContactInfo>
+                                <Box>
+                                    <ImgWrapper>
+                                        <A href="https://github.com/dongridongil" target="_blank">
+                                            <Image src={Gitimg} />
+                                        </A>
+                                    </ImgWrapper>
+                                    <Text>
+                                        <h3>Github </h3>
+                                        <p>Github 주소 입니다.</p>
+                                    </Text>
+                                </Box>
+                                <Box>
+                                    <ImgWrapper>
+                                        <A href="https://velog.io/@ehddlfwkd/posts" target="_blank">
+                                            <Image src={Velogimg} />
+                                        </A>
+                                    </ImgWrapper>
+                                    <Text>
+                                        <h3>Velog</h3>
+                                        <p> Velog 주소 입니다.</p>
+                                    </Text>
+                                </Box>
+                                <Box>
+                                    <Icon>
+                                        <FontAwesomeIcon style={{ color: 'black' }} icon={faPhone} />
+                                    </Icon>
+                                    <Text>
+                                        <h3>Phone</h3>
+                                        <p>010-9734-9171</p>
+                                    </Text>
+                                </Box>
+                                <Box>
+                                    <Icon>
+                                        <FontAwesomeIcon style={{ color: 'black' }} icon={faEnvelope} />
+                                    </Icon>
+                                    <Text>
+                                        <h3>Email</h3>
+                                        <p>ehddlfwkd32@naver.com</p>
+                                    </Text>
+                                </Box>
+                            </ContactInfo>
+                            <ContactForm>
+                                <form>
+                                    <h2>Send Message</h2>
+                                    <InputBox>
+                                        <input type="text" name="" required></input>
+                                        <span>Full Name</span>
+                                    </InputBox>
+                                    <InputBox>
+                                        <input type="text" name="" required></input>
+                                        <span>Email</span>
+                                    </InputBox>
+                                    <InputBox>
+                                        <textarea required></textarea>
+                                        <span>Message</span>
+                                    </InputBox>
+                                    <InputBox>
+                                        <input type="submit" name="" value="Send"></input>
+                                    </InputBox>
+                                </form>
+                            </ContactForm>
+                        </Container>
+                    </Section>
+                </Inner>
+                <Link to="/">
+                    {' '}
+                    <RightArrow />
+                </Link>
 
-            <Footerspan> © 2024 Designed by KIM Di. All rights reserved.</Footerspan>
-        </Back>
+                <Footerspan> © 2024 Designed by KIM Di. All rights reserved.</Footerspan>
+            </Back>
+        </motion.div>
     );
 };
 

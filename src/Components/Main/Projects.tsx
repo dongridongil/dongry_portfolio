@@ -6,6 +6,7 @@ import { IoMdClose } from 'react-icons/io';
 import { IoEnter } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { LeftArrow, RightArrow } from '../util/Utill';
+import { motion } from 'framer-motion';
 
 const Contents = styled.ul`
     display: flex;
@@ -219,15 +220,20 @@ const TitleContainer = styled.div`
 
 const Back = styled.div`
     display: flex;
-
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background: #262626;
-    background-image: linear-gradient(to right, #333 1px, transparent 1px),
-        linear-gradient(to bottom, #333 1px, transparent 1px);
-    background-size: 5vh 5vh;
 `;
+
+const pageMove = {
+    initial: { opacity: 0, x: '100vw' },
+    in: { opacity: 1, x: 0 },
+    out: { opacity: 0, x: '-100vw' },
+};
+
+const pageTransition = {
+    type: 'tween',
+    duration: 0.5,
+};
 
 ///////////////////////////////////
 const Projects = ({ projectsData }: { projectsData: Project[] }) => {
@@ -252,38 +258,40 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
     };
     return (
         <section id="project">
-            <Back>
-                <Link to={'/'}>
-                    <LeftArrow />
-                </Link>
+            <motion.div initial="initial" animate="in" exit="out" variants={pageMove} transition={pageTransition}>
+                <Back>
+                    <Link to={'/'}>
+                        <LeftArrow />
+                    </Link>
 
-                <GInner>
-                    <SectionHeader text=" PROJECT" />
-                    <GArea>
-                        <Contents>
-                            {ProjectsData.map((project) => (
-                                <ProjectItem key={project.id}>
-                                    <ImageContainer>
-                                        <Image src={project.imageUrl} alt="Projects" />
-                                        <Overlay>
-                                            <Name>{project.name}</Name>
-                                            <Skill>{project.skill}</Skill>
+                    <GInner>
+                        <SectionHeader text=" PROJECT" />
+                        <GArea>
+                            <Contents>
+                                {ProjectsData.map((project) => (
+                                    <ProjectItem key={project.id}>
+                                        <ImageContainer>
+                                            <Image src={project.imageUrl} alt="Projects" />
+                                            <Overlay>
+                                                <Name>{project.name}</Name>
+                                                <Skill>{project.skill}</Skill>
 
-                                            <LearnMoreButton onClick={() => openModal(project)}>
-                                                LEARN MORE
-                                            </LearnMoreButton>
-                                        </Overlay>
-                                    </ImageContainer>
-                                </ProjectItem>
-                            ))}
-                        </Contents>
-                    </GArea>
-                </GInner>
-                <Link to={'/skills'}>
-                    {' '}
-                    <RightArrow />{' '}
-                </Link>
-            </Back>
+                                                <LearnMoreButton onClick={() => openModal(project)}>
+                                                    LEARN MORE
+                                                </LearnMoreButton>
+                                            </Overlay>
+                                        </ImageContainer>
+                                    </ProjectItem>
+                                ))}
+                            </Contents>
+                        </GArea>
+                    </GInner>
+                    <Link to={'/skills'}>
+                        {' '}
+                        <RightArrow />{' '}
+                    </Link>
+                </Back>
+            </motion.div>
             {modalOpen && (
                 <ModalBackground onClick={closeModalOnclick}>
                     <ModalWrapper>

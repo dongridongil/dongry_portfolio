@@ -5,7 +5,7 @@ const LeftArrow = styled.div`
     height: 100px;
     transition: 0.5s;
     float: left;
-    box-shadow: -2px 2px 0 rgba(255, 255, 255, 1);
+    box-shadow: -2px 2px 0 ${(props) => props.theme.textColor};
     transform: rotate(45deg);
     margin-left: 200px;
     cursor: none;
@@ -19,7 +19,7 @@ const RightArrow = styled.div`
     transition: 0.5s;
     float: left;
     margin-right: 200px;
-    box-shadow: -2px 2px 0 rgba(255, 255, 255, 1);
+    box-shadow: -2px 2px 0 ${(props) => props.theme.textColor};
     transform: rotate(225deg);
     cursor: none;
     &:hover {

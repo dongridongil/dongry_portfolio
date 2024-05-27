@@ -4,6 +4,7 @@ import { SectionHeader } from '../../GlobalComponents';
 import { LeftArrow, RightArrow } from '../util/Utill';
 import { Link } from 'react-router-dom';
 import { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
 interface Tech {
     id: number;
@@ -85,11 +86,6 @@ const Back = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background: #262626;
-    background-image: linear-gradient(to right, #333 1px, transparent 1px),
-        linear-gradient(to bottom, #333 1px, transparent 1px);
-    background-size: 5vh 5vh;
 `;
 const Arrow = styled.div`
     margin-top: -1000px;
@@ -101,6 +97,18 @@ const Imghover = styled.img`
         transform: scale(1.3) translate(-20%, -20%);
     }
 `;
+
+const pageMove = {
+    initial: { opacity: 0, x: '100vw' },
+    in: { opacity: 1, x: 0 },
+    out: { opacity: 0, x: '-100vw' },
+};
+
+const pageTransition = {
+    type: 'tween',
+    duration: 0.5,
+};
+
 const Skills = () => {
     const TechStack = SkillsData.map((tech: Tech) => ({
         id: tech.id,
@@ -135,40 +143,42 @@ const Skills = () => {
 
     return (
         <section id="skill">
-            <Back>
-                <Arrow>
-                    <Link to={'/projects'}>
-                        <LeftArrow />
-                    </Link>
-                </Arrow>
+            <motion.div initial="initial" animate="in" exit="out" variants={pageMove} transition={pageTransition}>
+                <Back>
+                    <Arrow>
+                        <Link to={'/projects'}>
+                            <LeftArrow />
+                        </Link>
+                    </Arrow>
 
-                <Inner ref={containerRef}>
-                    <SectionHeader text=" SKILL" />
+                    <Inner ref={containerRef}>
+                        <SectionHeader text=" SKILL" />
 
-                    <Contents>
-                        {TechStack.map((tech) => (
-                            <Box key={tech.id} className="box">
-                                <TechStackBox key={tech.id}>
-                                    <TechStackIcon>
-                                        <Imghover src={tech.svg} />
+                        <Contents>
+                            {TechStack.map((tech) => (
+                                <Box key={tech.id} className="box">
+                                    <TechStackBox key={tech.id}>
+                                        <TechStackIcon>
+                                            <Imghover src={tech.svg} />
 
-                                        <p>{tech.name}</p>
-                                    </TechStackIcon>
-                                    <FlexColumn>
-                                        <Comment>{tech.comment}</Comment>
-                                    </FlexColumn>
-                                </TechStackBox>
-                            </Box>
-                        ))}
-                    </Contents>
-                </Inner>
-                <Arrow>
-                    <Link to="/footer">
-                        {' '}
-                        <RightArrow />
-                    </Link>
-                </Arrow>
-            </Back>
+                                            <p>{tech.name}</p>
+                                        </TechStackIcon>
+                                        <FlexColumn>
+                                            <Comment>{tech.comment}</Comment>
+                                        </FlexColumn>
+                                    </TechStackBox>
+                                </Box>
+                            ))}
+                        </Contents>
+                    </Inner>
+                    <Arrow>
+                        <Link to="/footer">
+                            {' '}
+                            <RightArrow />
+                        </Link>
+                    </Arrow>
+                </Back>
+            </motion.div>
         </section>
     );
 };
