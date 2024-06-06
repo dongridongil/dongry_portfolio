@@ -8,15 +8,8 @@ const Back = styled.div`
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    /* background: #262626;
-    background-image: linear-gradient(to right, #333 1px, transparent 1px),
-        linear-gradient(to bottom, #333 1px, transparent 1px);
-    background-size: 5vh 5vh;  */
 `;
 const H2 = styled.h2`
-    /* display: flex;
-    align-items: center;
-    justify-content: center; */
     margin-bottom: 260px;
     position: absolute;
     color: #fff;
@@ -26,7 +19,7 @@ const H2 = styled.h2`
 `;
 
 const Im = styled.h2`
-    color: #fff;
+    color: ${(props) => props.theme.ImColor};
     font-size: 0.8em;
     font-weight: 600;
     padding: 50 20px;
@@ -73,10 +66,11 @@ const Span = styled.span<SpanProps>`
         left: 0;
         width: 100%;
         white-space: nowrap; /* 한 줄로 유지 */
-        color: #01fe87;
+        color: ${(props) => props.theme.neonColor};
         overflow: hidden;
-        border-right: 4px solid #01fe87;
-        filter: drop-shadow(0 0 5px #01fe87) drop-shadow(0 0 15px #01fe87);
+        border-right: 4px solid ${(props) => props.theme.neonColor};
+        filter: drop-shadow(0 0 3px ${(props) => props.theme.neonColor})
+            drop-shadow(0 0 10px ${(props) => props.theme.neonColor});
         animation: ${textanimation} 3s linear infinite;
     }
 `;
@@ -88,7 +82,7 @@ const Enter = styled.div`
     margin-top: 700px;
     display: inline-block;
     padding: 45px 60px;
-    color: #01fe87;
+    color: ${(props) => props.theme.neonColor};
     text-transform: 4px;
     letter-spacing: 4px;
 
@@ -98,8 +92,9 @@ const Enter = styled.div`
     font-weight: 600;
     &:hover {
         color: #ffffff;
-        background: #01fe87;
-        box-shadow: 0 0 10px #01fe87, 0 0 40px #01fe87, 0 0 80px #01fe87;
+        background: ${(props) => props.theme.neonColor};
+        box-shadow: 0 0 10px ${(props) => props.theme.neonColor}, 0 0 40px ${(props) => props.theme.neonColor},
+            0 0 80px ${(props) => props.theme.neonColor};
         transition-delay: 1s;
     }
     span {
@@ -112,7 +107,7 @@ const Enter = styled.div`
         left: -100%;
         width: 100%;
         height: 2px;
-        background: linear-gradient(90deg, transparent, #01fe87);
+        background: linear-gradient(90deg, transparent, ${(props) => props.theme.neonColor});
     }
     &:hover span:nth-child(1) {
         left: 100%;
@@ -123,7 +118,7 @@ const Enter = styled.div`
         right: -100%;
         width: 100%;
         height: 2px;
-        background: linear-gradient(270deg, transparent, #01fe87);
+        background: linear-gradient(270deg, transparent, ${(props) => props.theme.neonColor});
     }
     &:hover span:nth-child(3) {
         right: 100%;
@@ -136,7 +131,7 @@ const Enter = styled.div`
         right: 0%;
         width: 2px;
         height: 100%;
-        background: linear-gradient(180deg, transparent, #01fe87);
+        background: linear-gradient(180deg, transparent, ${(props) => props.theme.neonColor});
     }
     &:hover span:nth-child(2) {
         top: 100%;
@@ -149,7 +144,7 @@ const Enter = styled.div`
         right: 0%;
         width: 2px;
         height: 100%;
-        background: linear-gradient(360deg, transparent, #01fe87);
+        background: linear-gradient(360deg, transparent, ${(props) => props.theme.neonColor});
     }
     &:hover span:nth-child(4) {
         bottom: 100%;

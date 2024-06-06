@@ -8,12 +8,15 @@ const ToggleDiv = styled.div<{ active: boolean }>`
     display: block;
     width: 160px;
     height: 80px;
-    cursor: pointer;
+
     border-radius: 80px;
-    background: #222;
+
     transition: 0.5s;
-    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1), inset 0 8px 8px rgba(0, 0, 0, 0.1),
-        inset 0 -4px 4px rgba(96, 62, 62, 0.1);
+    background: ${({ active }) => (active ? '#fff' : '#222')};
+    box-shadow: ${({ active }) =>
+        active
+            ? 'inset 0 2px 60px rgba(0, 0, 0, 0.1), inset 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 8px rgba(0, 0, 0, 0.05)'
+            : 'inset 0 8px 60px rgba(0, 0, 0, 0.1), inset 0 8px 8px rgba(0, 0, 0, 0.1), inset 0 -4px 4px rgba(0, 0, 0, 0.1)'};
 
     .indicator {
         position: absolute;
@@ -21,11 +24,14 @@ const ToggleDiv = styled.div<{ active: boolean }>`
         left: ${({ active }) => (active ? '80px' : '0')};
         width: 80px;
         height: 80px;
-        background: linear-gradient(to bottom, #444, #222);
+        background: ${({ active }) =>
+            active ? 'linear-gradient(to bottom, #eaeaea, #f9f9f9)' : 'linear-gradient(to bottom, #444, #222)'};
         border-radius: 50%;
         transform: scale(0.9);
-        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), inset 0 4px 4px rgba(255, 255, 255, 0.2),
-            inset 0 -4px 4px rgba(255, 255, 255, 0.2);
+        box-shadow: ${({ active }) =>
+            active
+                ? '0 8px 40px rgba(0, 0, 0, 0.5), inset 0 4px 4px rgba(255, 255, 255, 0.2),inset 0 -4px 4px rgba(255, 255, 255, 0.2)'
+                : '0 8px 40px rgba(0, 0, 0, 0.5), inset 0 4px 4px rgba(255, 255, 255, 0.2),inset 0 -4px 4px rgba(255, 255, 255, 0.2)'};
         transition: 0.5s;
     }
 `;

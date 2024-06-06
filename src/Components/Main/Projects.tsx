@@ -24,6 +24,7 @@ const Overlay = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
+
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -66,6 +67,7 @@ const ProjectItem = styled.li`
 `;
 
 const Name = styled.p`
+    color: black;
     position: absolute;
     text-align: center;
     font-weight: 600;
@@ -193,25 +195,32 @@ const ModalButton = styled.button`
 `;
 
 const Title = styled.h2`
-    font-size: 32px;
-`;
-
-const Summary = styled.p`
-    position: absolute;
-    white-space: pre-line; // 줄바꿈
-    font-size: 18px;
-    left: 47px;
-    top: 550px;
+    font-size: 34px;
+    color: black;
+    font-weight: 700;
+    margin-top: -20px;
 `;
 
 const Underscore = styled.p`
     position: absolute;
     bottom: -15px;
+    margin-bottom: 10px;
     left: 0;
     width: 600px;
     height: 1px;
     background-color: #aeabab;
 `;
+const Summary = styled.p`
+    margin-top: -10px;
+    color: black;
+    position: absolute;
+    white-space: pre-line; // 줄바꿈
+    font-weight: 500;
+    font-size: 18px;
+    left: 47px;
+    top: 550px;
+`;
+
 const TitleContainer = styled.div`
     position: absolute;
     top: 485px;

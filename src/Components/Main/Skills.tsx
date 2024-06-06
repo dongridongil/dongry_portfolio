@@ -50,6 +50,7 @@ const Box = styled.div`
 `;
 
 const TechStackBox = styled.li`
+    color: ${(props) => props.theme.textColor};
     font-weight: 600;
     padding: 2rem 1rem 1rem 2rem;
     margin-left: 50px;
@@ -66,13 +67,13 @@ const TechStackIcon = styled.div`
         margin-left: 1.5rem;
         position: relative;
         top: 1.2rem;
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
 `;
 
 const Comment = styled.span`
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 1.1rem;
+    font-weight: 500;
     line-height: 1.5;
 `;
 

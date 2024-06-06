@@ -31,10 +31,10 @@ const ProjectsData: Project[] = [
         name: 'Photo Splash',
         title: 'Photo Splash ',
         skill: 'React ,Type Script, Vite',
-        summary: `Unsplash 이미지 사이트를 참고 및 api 활용 하여 Photo Splash
-        라는 이미지 저장 사이트 를 만들어 보았습니다.
-        처음 활용해보는 vite , scss , toast 를 배우면서 재밌고 
-        의미있는 시간들이였습니다. `,
+        summary: `Unsplash 이미지 사이트를 참고 및 api 활용 하여 개인 프로젝트인
+          이미지 검색&저장 사이트  Photo Splash 를 만들어 보았습니다.
+         새로운 기술 습득을 위해 VITE , SCSS , TOAST 를 사용하였고
+        반응형 디자인을 구현하여 다양한 디바이스 환경에 맞는  ui를 구성했습니다. `,
         url: 'https://dongridongil.github.io/reactalbum/',
     },
 
@@ -54,7 +54,7 @@ const ProjectsData: Project[] = [
         imageUrl: Shopimg,
         backimage: ShopBackimg,
         name: 'Shopping Mall',
-        title: '쇼핑몰',
+        title: 'Shopping Mall',
         skill: 'React  , Java Script',
         summary: `장바구니, 최근본상품 목록 등등 필요한 기능들을  만들어본 
         쇼핑몰 토이프로젝트입니다
@@ -67,7 +67,7 @@ const ProjectsData: Project[] = [
         imageUrl: Movieimg,
         backimage: MovieBackimg,
         name: 'Movie Information Site',
-        title: '다양한 영화정보 소개사이트',
+        title: 'Movie Information',
         skill: 'React  , Type Script',
         summary: ' 다양한 해외 영화들을 확인할수 있고 디테일 정보도 알아갈수 있는 앱입니다.  ',
         url: 'https://dongridongil.github.io/moviepracs/',
@@ -78,7 +78,7 @@ const ProjectsData: Project[] = [
         imageUrl: Momentimg,
         backimage: MomentBackimg,
         name: 'MOMENTUM',
-        title: '일정관리 앱',
+        title: 'MOMENTUM',
         skill: 'Vanilla JS',
         summary: ` Chrome의 일정관리 앱인 momentum을 바닐라JS 를 통해 만들어보았습니다 . 
             날씨와 온도정보를 제공하며 localStorage 을 통해 로컬환경에서 
@@ -90,7 +90,7 @@ const ProjectsData: Project[] = [
         imageUrl: Vuestaimg,
         backimage: VuestaBackimg,
         name: 'VueStaGram',
-        title: '인스타그램 클론입니다',
+        title: 'VueStaGram',
         skill: 'Vue , Java Script',
         summary: `Vue.js 로 만든 인스타그램 클론입니다 . Vue에서 필수적으로 알아야할
          기능들 (props, mitt , vuex ,ajax요청, composition API) 사용법에 대해 
