@@ -22,6 +22,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 main, menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
@@ -29,8 +30,15 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;
   cursor: none;
+
  
 }
+
+*, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, main, menu, nav, section {
@@ -44,6 +52,7 @@ footer, header, hgroup, main, menu, nav, section {
 }
 body {
   line-height: 1;
+
 }
 menu, ol, ul {
   list-style: none;
@@ -61,12 +70,7 @@ table {
   border-spacing: 0;
 }
 
-* {
-  margin: 0;
-  padding:0;
-  box-sizing: border-box;
-  
-}
+
 body {
   font-family: 'Public Sans', sans-serif;
   font-weight: 400;
@@ -76,8 +80,14 @@ body {
   background-size: ${(props) => props.theme.backgroundSize};
   background-color: ${(props) => props.theme.background};
   color:${(props) => props.theme.textColor};
-  cursor: none;
+ 
+  width:100%;
+  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    cursor: none;
 }
+
 a {
   text-decoration:none;
   color:inherit;

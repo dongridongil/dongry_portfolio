@@ -30,34 +30,18 @@ export const GWrapper = styled.section`
 export const GInner = styled.div`
     width: 100%;
     margin: 0 auto;
-
-    @media (min-width: 0px) {
-        width: 100%;
-        padding: 0 5%;
-    }
-    @media (min-width: 500px) {
-        padding: 0 4rem;
-    }
-    @media (min-width: 1000px) {
-        padding: 0 10rem;
-    }
-    @media (min-width: 1200px) {
-        width: 1000px;
-        padding: 0;
-    }
-    @media (min-width: 1400px) {
-        width: 1200px;
-    }
-    @media (min-width: 1600px) {
-        width: 1400px;
-    }
-    @media (min-width: 1900px) {
-        width: 1600px;
-    }
 `;
 
 export const GArea = styled.div`
     width: 100%;
+
+    @media (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 `;
 
 /**
@@ -85,6 +69,6 @@ const SectionName = styled.div`
     @media (max-width: 500px) {
         /* padding-left: 3rem; */
         margin-bottom: 2rem;
-        font-size: 4.6rem;
+        font-size: 3rem;
     }
 `;

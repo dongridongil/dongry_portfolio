@@ -12,6 +12,10 @@ const LeftArrow = styled.div`
     &:hover {
         box-shadow: -20px 20px 0 #01fe87;
     }
+    @media (max-width: 500px) {
+        width: 50px;
+        height: 50px;
+    }
 `;
 const RightArrow = styled.div`
     width: 100px;
@@ -24,6 +28,10 @@ const RightArrow = styled.div`
     cursor: none;
     &:hover {
         box-shadow: -20px 20px 0 #01fe87;
+    }
+    @media (max-width: 500px) {
+        width: 50px;
+        height: 50px;
     }
 `;
 

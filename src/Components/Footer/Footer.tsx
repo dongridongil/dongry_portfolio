@@ -7,6 +7,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
 
+const Back = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 500px) {
+        overflow-x: hidden;
+        margin: 0;
+        width: 100%;
+    }
+`;
+const Inner = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+`;
+
 const ImgWrapper = styled.div`
     margin-top: -10px;
     min-width: 60px;
@@ -35,19 +53,9 @@ const Footerspan = styled.span`
     position: absolute;
     bottom: 0;
     color: white;
-`;
-
-const Back = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-`;
-const Inner = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    @media (max-width: 500px) {
+        margin-bottom: -150px;
+    }
 `;
 
 const Section = styled.section`
@@ -63,7 +71,7 @@ const Section = styled.section`
     background-size: cover; */
 `;
 const Content = styled.div`
-    max-width: 800px;
+    /* max-width: 800px; */
     position: absolute;
     top: 200px;
     display: flex;
@@ -73,9 +81,17 @@ const Content = styled.div`
     text-align: center;
     color: ${(props) => props.theme.textColor};
 
+    @media (max-width: 500px) {
+        top: 50px;
+        overflow-x: hidden;
+        margin: 0;
+    }
     h2 {
         font-size: 100px;
         font-weight: 700;
+        @media (max-width: 500px) {
+            font-size: 50px;
+        }
     }
 `;
 const Container = styled.div`
@@ -85,11 +101,25 @@ const Container = styled.div`
     align-items: center;
     margin-top: 40px;
     gap: 200px;
+    @media (max-width: 500px) {
+        margin-top: 70px;
+        margin-left: -200px;
+        width: 50%;
+        gap: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 const ContactInfo = styled.div`
     width: 500px;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 500px) {
+        width: 30px;
+    }
 `;
 
 const Box = styled.div`
@@ -109,6 +139,10 @@ const Icon = styled.div`
     align-items: center;
     border-radius: 50%;
     font-size: 22px;
+
+    @media (max-width: 500px) {
+        font-size: 12px;
+    }
 `;
 const Text = styled.text`
     display: flex;
@@ -117,15 +151,25 @@ const Text = styled.text`
     font-size: 16px;
     flex-direction: column;
     font-weight: 300;
+    @media (max-width: 500px) {
+        font-size: 14px;
+    }
     h3 {
         margin-bottom: 15px;
         font-size: 20px;
         font-weight: 500;
         color: #00bcd4;
+        @media (max-width: 500px) {
+            font-size: 12px;
+        }
     }
     p {
         color: ${(props) => props.theme.textColor};
         margin-top: -5px;
+        @media (max-width: 500px) {
+            wdith: 100%;
+            white-space: nowrap;
+        }
     }
 `;
 const ContactForm = styled.form`
@@ -136,10 +180,21 @@ const ContactForm = styled.form`
     padding: 40px;
     background: #fff;
     border: 1px solid;
+    @media (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-start;
+        width: 25vh;
+        height: 35vh;
+        font-size: 12px;
+    }
     h2 {
         font-size: 30px;
         color: #333;
         font-weight: 500;
+        @media (max-width: 500px) {
+            font-size: 10px;
+        }
     }
 `;
 const InputBox = styled.div`
@@ -156,6 +211,9 @@ const InputBox = styled.div`
         border-bottom: 2px solid #333;
         outline: none;
         resize: none;
+        @media (max-width: 500px) {
+            font-size: 12px;
+        }
     }
     span {
         position: absolute;
@@ -166,6 +224,9 @@ const InputBox = styled.div`
         pointer-events: none;
         transition: 0.5s;
         color: #666;
+        @media (max-width: 500px) {
+            font-size: 12px;
+        }
     }
     input:focus ~ span,
     input:valid ~ span,
@@ -184,6 +245,9 @@ const InputBox = styled.div`
         cursor: pointer;
         padding: 10px;
         font-size: 18px;
+        @media (max-width: 500px) {
+            font-size: 12px;
+        }
     }
 `;
 

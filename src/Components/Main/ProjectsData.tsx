@@ -4,8 +4,6 @@ import Momentimg from '../../asset/imgs/momentfront.png';
 import MomentBackimg from '../../asset/imgs/backmoment.png';
 import Movieimg from '../../asset/imgs/movieapp.png';
 import MovieBackimg from '../../asset/imgs/movieback.png';
-import Coinimg from '../../asset/imgs/coinapp.png';
-import CoinBackimg from '../../asset/imgs/coinback.png';
 import Shopimg from '../../asset/imgs/Shop.png';
 import ShopBackimg from '../../asset/imgs/Shopback.png';
 import Vuestaimg from '../../asset/imgs/vuestagrm.png';

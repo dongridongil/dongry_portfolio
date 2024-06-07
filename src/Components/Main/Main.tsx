@@ -7,7 +7,15 @@ const Back = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
     min-height: 100vh;
+    width: 100%; /* 추가 */
+    overflow-x: hidden; /* 모바일 뷰포트에서의 넘침 방지 */
+
+    @media (max-width: 500px) {
+        overflow-x: hidden;
+        margin: 0;
+    }
 `;
 const H2 = styled.h2`
     margin-bottom: 260px;
@@ -16,14 +24,28 @@ const H2 = styled.h2`
     font-size: 10em;
     font-weight: 700;
     padding: 0 100px;
+    @media (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        font-size: 0.6em; /* 작은 화면에서 글자 크기 조정 */
+        padding: 0 0; /* 작은 화면에서 패딩 조정 */
+        margin-bottom: 100px; /* 마진 조정 */
+    }
 `;
 
 const Im = styled.h2`
     color: ${(props) => props.theme.ImColor};
     font-size: 0.8em;
     font-weight: 600;
-    padding: 50 20px;
+    padding: 50px 20px;
     margin-bottom: 20px;
+
+    @media (max-width: 500px) {
+        font-size: 3em; /* 작은 화면에서 글자 크기 조정 */
+        padding: 0 0; /* 작은 화면에서 패딩 조정 */
+    }
 `;
 
 const displayanimation = keyframes`
@@ -59,6 +81,11 @@ const Span = styled.span<SpanProps>`
     animation: ${displayanimation} 9s infinite;
     animation-delay: calc(-3s * var(--i));
 
+    @media (max-width: 500px) {
+        font-size: 3em; /* 작은 화면에서 글자 크기 조정 */
+        margin-left: 0;
+        margin-bottom: 100px; /* 마진 조정 */
+    }
     &::before {
         content: attr(data-text);
         position: absolute;
@@ -78,7 +105,7 @@ const Span = styled.span<SpanProps>`
 /* 입장 버튼*/
 const Enter = styled.div`
     text-decoration: none !important;
-    position: absolute;
+    position: relative;
     margin-top: 700px;
     display: inline-block;
     padding: 45px 60px;
@@ -90,6 +117,12 @@ const Enter = styled.div`
     overflow: hidden;
     transition: 0.2s;
     font-weight: 600;
+
+    @media (max-width: 500px) {
+        font-size: 1.5em; /* 작은 화면에서 글자 크기 조정 */
+        padding: 20px 30px; /* 작은 화면에서 패딩 조정 */
+        margin-top: 250px; /* 마진 조정 */
+    }
     &:hover {
         color: #ffffff;
         background: ${(props) => props.theme.neonColor};

@@ -8,6 +8,19 @@ import { Link } from 'react-router-dom';
 import { LeftArrow, RightArrow } from '../util/Utill';
 import { motion } from 'framer-motion';
 
+const Back = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 500px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow-x: hidden;
+        margin: 0;
+    }
+`;
+
 const Contents = styled.ul`
     display: flex;
     justify-content: center;
@@ -16,6 +29,8 @@ const Contents = styled.ul`
     padding: 0;
     margin-top: 50px;
     margin-bottom: 100px;
+
+    width: 100%;
 `;
 
 const Overlay = styled.div`
@@ -35,13 +50,20 @@ const Overlay = styled.div`
 `;
 const ImageContainer = styled.div`
     position: relative;
+
     width: 450px;
     height: 400px;
     overflow: hidden;
     margin-bottom: 50px;
     margin-left: 50px;
+
     border-radius: 30px;
     box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px;
+    @media (max-width: 500px) {
+        margin-left: 10px;
+        width: 30vh;
+        height: 30vh;
+    }
 `;
 
 const Image = styled.img`
@@ -56,6 +78,7 @@ const ProjectItem = styled.li`
     flex: 0 0 250px;
     position: relative;
     cursor: pointer;
+
     &:hover ${Image} {
         opacity: 0;
         transition: opacity 1s ease;
@@ -63,6 +86,15 @@ const ProjectItem = styled.li`
 
     &:hover ${Overlay} {
         opacity: 1;
+    }
+
+    @media (max-width: 500px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-align: center;
     }
 `;
 
@@ -73,6 +105,11 @@ const Name = styled.p`
     font-weight: 600;
     font-size: 30px;
     top: 80px;
+
+    @media (max-width: 500px) {
+        font-size: 20px;
+        margin-top: -22px;
+    }
 `;
 
 const Skill = styled.p`
@@ -82,6 +119,10 @@ const Skill = styled.p`
     font-size: 20px;
     color: #e31b6d;
     top: 120px;
+    @media (max-width: 500px) {
+        font-size: 16px;
+        margin-top: -20px;
+    }
 `;
 const LearnMoreButton = styled.button`
     width: 50%;
@@ -95,6 +136,11 @@ const LearnMoreButton = styled.button`
     padding: 10px;
     cursor: none !important;
     transition: all 0.5s ease-in-out;
+
+    @media (max-width: 500px) {
+        font-size: 12px;
+        margin-bottom: -40px;
+    }
 
     &:hover {
         cursor: none !important;
@@ -117,6 +163,11 @@ const ModalWrapper = styled.div`
 
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     z-index: 1000; //화면 상위로 이동
+
+    @media (max-width: 500px) {
+        width: 350px;
+        height: 500px;
+    }
 `;
 
 const ModalContent = styled.div`
@@ -139,6 +190,11 @@ const ModalImg = styled.div<ModalImgProps>`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 500px) {
+        width: 350px;
+        height: 230px;
+    }
 `;
 
 const ModalBackgroundimg = styled.img`
@@ -166,6 +222,10 @@ const CloseButton = styled.button`
     background-color: white;
     border: none;
     cursor: pointer;
+    @media (max-width: 500px) {
+        font-size: 18px;
+        margin-bottom: -27px;
+    }
 `;
 
 const ModalButton = styled.button`
@@ -184,6 +244,11 @@ const ModalButton = styled.button`
     display: flex;
     align-items: center;
 
+    @media (max-width: 500px) {
+        font-size: 10px;
+        padding: 8px 12px;
+        margin-bottom: -30px;
+    }
     svg {
         margin-right: 10px;
     }
@@ -199,6 +264,10 @@ const Title = styled.h2`
     color: black;
     font-weight: 700;
     margin-top: -20px;
+    @media (max-width: 500px) {
+        font-size: 28px;
+        margin-top: -10px;
+    }
 `;
 
 const Underscore = styled.p`
@@ -209,6 +278,9 @@ const Underscore = styled.p`
     width: 600px;
     height: 1px;
     background-color: #aeabab;
+    @media (max-width: 500px) {
+        width: 260px;
+    }
 `;
 const Summary = styled.p`
     margin-top: -10px;
@@ -219,18 +291,22 @@ const Summary = styled.p`
     font-size: 18px;
     left: 47px;
     top: 550px;
+    width: 260px;
+
+    @media (max-width: 500px) {
+        top: 300px;
+        font-size: 10px;
+    }
 `;
 
 const TitleContainer = styled.div`
     position: absolute;
     top: 485px;
     left: 45px;
-`;
 
-const Back = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @media (max-width: 500px) {
+        top: 240px;
+    }
 `;
 
 const pageMove = {
