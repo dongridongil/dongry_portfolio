@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-port/static/css/main.9a6d1f18.css",
-    "main.js": "/react-port/static/js/main.15c0d269.js",
+    "main.js": "/react-port/static/js/main.7a5d1018.js",
     "static/media/photosplashback1.png": "/react-port/static/media/photosplashback1.979a82ac586b1a680e23.png",
     "static/media/netflixback.png": "/react-port/static/media/netflixback.f8a73530891068f30aa1.png",
     "static/media/dongflix.png": "/react-port/static/media/dongflix.89c57be57075f9013baa.png",
@@ -27,10 +27,10 @@
     "static/media/html5.svg": "/react-port/static/media/html5.366c7a1ace25f34184363f46c787822d.svg",
     "static/media/css3.svg": "/react-port/static/media/css3.362b04c907d99f28a40f72feec1bba57.svg",
     "main.9a6d1f18.css.map": "/react-port/static/css/main.9a6d1f18.css.map",
-    "main.15c0d269.js.map": "/react-port/static/js/main.15c0d269.js.map"
+    "main.7a5d1018.js.map": "/react-port/static/js/main.7a5d1018.js.map"
   },
   "entrypoints": [
     "static/css/main.9a6d1f18.css",
-    "static/js/main.15c0d269.js"
+    "static/js/main.7a5d1018.js"
   ]
 }
