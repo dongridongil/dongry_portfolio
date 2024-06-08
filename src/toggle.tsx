@@ -27,8 +27,8 @@ const ToggleDiv = styled.div<{ active: boolean }>`
     .indicator {
         position: absolute;
         top: 0;
-        left: ${({ active }) => (active ? '40px' : '0')};
-        width: 40px;
+        left: ${({ active }) => (active ? '80px' : '0')};
+        width: 80px;
         height: 80px;
         background: ${({ active }) =>
             active ? 'linear-gradient(to bottom, #eaeaea, #f9f9f9)' : 'linear-gradient(to bottom, #444, #222)'};
@@ -42,6 +42,7 @@ const ToggleDiv = styled.div<{ active: boolean }>`
         @media (max-width: 500px) {
             width: 40px;
             height: 40px;
+            left: ${({ active }) => (active ? '40px' : '0')};
         }
     }
 `;
