@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-port/static/css/main.25c97cec.css",
-    "main.js": "/react-port/static/js/main.9f9cfafb.js",
+    "main.js": "/react-port/static/js/main.6c722b62.js",
     "static/media/photosplash.png": "/react-port/static/media/photosplash.d824aa636914fe4ff01b.png",
     "static/media/dongflix.png": "/react-port/static/media/dongflix.29748eaf71cc1a6274b3.png",
     "static/media/nextfront.png": "/react-port/static/media/nextfront.74f84d766bec057271bb.png",
@@ -15,6 +15,7 @@
     "static/media/Shopback.png": "/react-port/static/media/Shopback.81f247a291c8552b0152.png",
     "static/media/photosplashback.png": "/react-port/static/media/photosplashback.13b70c6407c6890d9023.png",
     "static/media/vue.png": "/react-port/static/media/vue.2bfaa1f16ea7316651bf.png",
+    "static/media/kdi3.png": "/react-port/static/media/kdi3.c40ed306dd01860c6ff3.png",
     "static/media/node.svg": "/react-port/static/media/node.dd47e26ed1d7dddf018e5cbffc40f76d.svg",
     "static/media/laravel.svg": "/react-port/static/media/laravel.50db3a8daf02162430f736ce23c44dc3.svg",
     "static/media/react.svg": "/react-port/static/media/react.6de741293691020ff815785ac4aeedc4.svg",
@@ -27,10 +28,10 @@
     "static/media/html5.svg": "/react-port/static/media/html5.366c7a1ace25f34184363f46c787822d.svg",
     "static/media/css3.svg": "/react-port/static/media/css3.362b04c907d99f28a40f72feec1bba57.svg",
     "main.25c97cec.css.map": "/react-port/static/css/main.25c97cec.css.map",
-    "main.9f9cfafb.js.map": "/react-port/static/js/main.9f9cfafb.js.map"
+    "main.6c722b62.js.map": "/react-port/static/js/main.6c722b62.js.map"
   },
   "entrypoints": [
     "static/css/main.25c97cec.css",
-    "static/js/main.9f9cfafb.js"
+    "static/js/main.6c722b62.js"
   ]
 }
