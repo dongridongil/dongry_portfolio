@@ -1,15 +1,15 @@
 import DongflixBackimg from '../../asset/imgs/netflixback.png';
 import Dongfliximg from '../../asset/imgs/dongflix.png';
-import Momentimg from '../../asset/imgs/momentfront.png';
-import MomentBackimg from '../../asset/imgs/backmoment.png';
-import Movieimg from '../../asset/imgs/movieapp.png';
+import Movieimg from '../../asset/imgs/movieinfo.png';
 import MovieBackimg from '../../asset/imgs/movieback.png';
 import Shopimg from '../../asset/imgs/Shop.png';
 import ShopBackimg from '../../asset/imgs/Shopback.png';
-import Vuestaimg from '../../asset/imgs/vuestagrm.png';
+import Vuestaimg from '../../asset/imgs/vuestar.png';
 import VuestaBackimg from '../../asset/imgs/vueback.png';
 import Photosplashimg from '../../asset/imgs/photosplash.png';
-import PhotosplashBackimg from '../../asset/imgs/photosplashback1.png';
+import PhotosplashBackimg from '../../asset/imgs/photosplashback.png';
+import NextMovieimg from '../../asset/imgs/nextfront.png';
+import NextMovieBackimg from '../../asset/imgs/nextback.png';
 export interface Project {
     id: number;
     imageUrl: string;
@@ -23,7 +23,22 @@ export interface Project {
 
 const ProjectsData: Project[] = [
     {
-        id: 4,
+        id: 1,
+        imageUrl: NextMovieimg,
+        backimage: NextMovieBackimg,
+        name: 'NEXT MOVIE',
+        title: 'NEXT MOVIE ',
+        skill: 'Next.Js ,Type Script ,Vercel',
+        summary: `최신 영화&시리즈 를 알려주는 사이트 themoviedb 의 api 활용 하여 
+        개인 프로젝트인 최신영화 및 티비 시리즈 정보들을 
+        한눈에 볼수있는 사이트를 만들었습니다. 서버 사이드와 클라이언트 사이드를 
+          구분하는 작업을 통하여 서버 사이드 렌더링인 NEXT.JS와 vercel 을 활용한 배포도  
+          배워볼수있는 시간이였습니다.
+          `,
+        url: 'https://nextjs-movies-p8cz74td9-dongrys-projects.vercel.app/',
+    },
+    {
+        id: 2,
         imageUrl: Photosplashimg,
         backimage: PhotosplashBackimg,
         name: 'Photo Splash',
@@ -37,7 +52,7 @@ const ProjectsData: Project[] = [
     },
 
     {
-        id: 1,
+        id: 3,
         imageUrl: Dongfliximg,
         backimage: DongflixBackimg,
         name: 'NETFLIX CLONE',
@@ -48,7 +63,7 @@ const ProjectsData: Project[] = [
         url: 'https://dongridongil.github.io/dongfilx_clone/',
     },
     {
-        id: 2,
+        id: 4,
         imageUrl: Shopimg,
         backimage: ShopBackimg,
         name: 'Shopping Mall',
@@ -61,7 +76,7 @@ const ProjectsData: Project[] = [
     },
 
     {
-        id: 3,
+        id: 6,
         imageUrl: Movieimg,
         backimage: MovieBackimg,
         name: 'Movie Information Site',
@@ -73,18 +88,6 @@ const ProjectsData: Project[] = [
 
     {
         id: 5,
-        imageUrl: Momentimg,
-        backimage: MomentBackimg,
-        name: 'MOMENTUM',
-        title: 'MOMENTUM',
-        skill: 'Vanilla JS',
-        summary: ` Chrome의 일정관리 앱인 momentum을 바닐라JS 를 통해 만들어보았습니다 . 
-            날씨와 온도정보를 제공하며 localStorage 을 통해 로컬환경에서 
-            일정을 저장하여 관리 할수있는 앱입니다. `,
-        url: 'https://dongridongil.github.io/momentem/',
-    },
-    {
-        id: 6,
         imageUrl: Vuestaimg,
         backimage: VuestaBackimg,
         name: 'VueStaGram',

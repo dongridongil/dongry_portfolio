@@ -29,7 +29,7 @@ time, mark, audio, video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
-  cursor: none;
+  
 
  
 }
@@ -85,13 +85,13 @@ body {
   overflow-x: hidden;
     margin: 0;
     padding: 0;
-    cursor: none;
+    
 }
 
 a {
   text-decoration:none;
   color:inherit;
-  cursor: none;
+  
 }
 .nav-link {
   color: #201e1edc; 

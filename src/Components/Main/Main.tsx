@@ -18,7 +18,7 @@ const Back = styled.div`
     }
 `;
 const H2 = styled.h2`
-    margin-bottom: 260px;
+    margin-bottom: 400px;
     position: absolute;
     color: #fff;
     font-size: 10em;
@@ -98,7 +98,7 @@ const Span = styled.span<SpanProps>`
         border-right: 4px solid ${(props) => props.theme.neonColor};
         filter: drop-shadow(0 0 3px ${(props) => props.theme.neonColor})
             drop-shadow(0 0 10px ${(props) => props.theme.neonColor});
-        animation: ${textanimation} 3s linear infinite;
+        animation: ${textanimation} 3s linear;
     }
 `;
 
@@ -218,14 +218,14 @@ const Main = () => {
                 {/* 자기 소개 부분  */}
                 <H2>
                     <Im>i'm</Im>
-                    <Span index={0} data-text="안녕하세요 웹 개발자">
-                        안녕하세요 웹 개발자
+                    <Span index={0} data-text="안녕하세요 ">
+                        안녕하세요
                     </Span>
-                    <Span index={2} data-text="김동일 입니다.">
-                        김동일 입니다.
+                    <Span index={2} data-text="개인 포트폴리오 입니다">
+                        개인 포트폴리오 입니다
                     </Span>
-                    <Span index={1} data-text="잘 부탁 드립니다 😎">
-                        잘 부탁 드립니다 😎
+                    <Span index={1} data-text="살펴 가세요 ">
+                        살펴 가세요
                     </Span>
                 </H2>
                 {/* 입장 버튼*/}

@@ -48,6 +48,8 @@ export const GArea = styled.div`
  * 공통 헤더 이름작성용
  */
 const SectionName = styled.div`
+    position: relative;
+    z-index: 9999;
     margin-top: 5rem;
     margin-bottom: 6rem;
     display: flex;

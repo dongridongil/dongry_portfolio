@@ -7,6 +7,39 @@ import { IoEnter } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { LeftArrow, RightArrow } from '../util/Utill';
 import { motion } from 'framer-motion';
+import { FaHome } from 'react-icons/fa';
+
+//swiper 라이브러리
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore from 'swiper';
+import { Autoplay, EffectCoverflow, Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+SwiperCore.use([Navigation, Pagination, EffectCoverflow, Autoplay]);
+
+const Header = styled.div`
+    position: relative;
+    width: 100%;
+    height: 0;
+    z-index: 10;
+
+    a {
+        position: absolute;
+        top: 300px;
+        color: #000;
+        text-decoration: none;
+        font-size: 24px;
+
+        &:first-child {
+            left: -100px;
+        }
+
+        &:last-child {
+            right: -100px;
+        }
+    }
+`;
 
 const Back = styled.div`
     display: flex;
@@ -37,28 +70,28 @@ const Overlay = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+
     width: 100%;
     height: 100%;
-
-    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 0.3s ease;
 `;
+
 const ImageContainer = styled.div`
     position: relative;
-
-    width: 450px;
-    height: 400px;
     overflow: hidden;
-    margin-bottom: 50px;
-    margin-left: 50px;
-
+    margin-top: 100px;
     border-radius: 30px;
-    box-shadow: 0 0 10px #ffffff, 0 0 20px #ffffff, 0 0 30px;
+    width: 1200px;
+    height: 800px;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 10px #040404;
     @media (max-width: 500px) {
         margin-left: 10px;
         width: 30vh;
@@ -67,15 +100,32 @@ const ImageContainer = styled.div`
 `;
 
 const Image = styled.img`
-    display: block;
+    /* display: block; */
     width: 100%;
     height: 100%;
-    background-image: cover;
     object-fit: cover;
 `;
 
+const StyledSwiper = styled(Swiper)`
+    width: 80%;
+    z-index: 1;
+`;
+
+const StyledSwiperSlide = styled(SwiperSlide)`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: -250px;
+    width: 600px;
+    height: 1200px;
+    padding: 20px;
+    /* height: auto;
+    border: 3px solid red; */
+`;
+
 const ProjectItem = styled.li`
-    flex: 0 0 250px;
     position: relative;
     cursor: pointer;
 
@@ -94,16 +144,15 @@ const ProjectItem = styled.li`
         justify-content: center;
         align-items: center;
         text-align: center;
-        text-align: center;
     }
 `;
 
 const Name = styled.p`
-    color: black;
+    color: white;
     position: absolute;
     text-align: center;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 60px;
     top: 80px;
 
     @media (max-width: 500px) {
@@ -116,36 +165,28 @@ const Skill = styled.p`
     position: absolute;
     font-weight: 600;
     text-align: center;
-    font-size: 20px;
+    font-size: 36px;
     color: #e31b6d;
-    top: 120px;
+    top: 200px;
     @media (max-width: 500px) {
         font-size: 16px;
         margin-top: -20px;
     }
 `;
 const LearnMoreButton = styled.button`
-    width: 50%;
-    bottom: 60px;
-    background-color: white;
-
-    border: 2px solid #e31b6d;
     position: absolute;
-    text-align: center;
-    font-size: 16px;
-    padding: 10px;
-    cursor: none !important;
-    transition: all 0.5s ease-in-out;
-
-    @media (max-width: 500px) {
-        font-size: 12px;
-        margin-bottom: -40px;
-    }
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    bottom: 150px;
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    cursor: pointer;
 
     &:hover {
-        cursor: none !important;
-        color: white;
-        background-color: #e31b6d;
+        background-color: #0056b3;
     }
 `;
 
@@ -153,11 +194,11 @@ const LearnMoreButton = styled.button`
 
 const ModalWrapper = styled.div`
     position: fixed;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 700px;
-    height: 800px;
+    width: 850px;
+    height: 900px;
 
     background-color: white;
 
@@ -185,8 +226,8 @@ interface ModalImgProps {
 }
 
 const ModalImg = styled.div<ModalImgProps>`
-    width: 700px;
-    height: 460px;
+    width: 850px;
+    height: 500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -230,14 +271,12 @@ const CloseButton = styled.button`
 
 const ModalButton = styled.button`
     position: absolute;
-    font-size: 17px;
-    font-weight: 520;
-    bottom: 50px;
-    left: 45px;
-    padding: 12px 30px;
+    background-color: white;
+    bottom: 60px;
+    left: 60px;
+
     border: none;
-    color: white;
-    background-color: #e31b6d;
+
     text-align: center;
 
     transition: all 0.5s ease-in-out;
@@ -254,7 +293,7 @@ const ModalButton = styled.button`
     }
 
     &:hover {
-        color: #e31b6d;
+        color: #323138;
         background-color: white;
     }
 `;
@@ -263,7 +302,7 @@ const Title = styled.h2`
     font-size: 34px;
     color: black;
     font-weight: 700;
-    margin-top: -20px;
+    margin-top: 20px;
     @media (max-width: 500px) {
         font-size: 28px;
         margin-top: -10px;
@@ -275,7 +314,7 @@ const Underscore = styled.p`
     bottom: -15px;
     margin-bottom: 10px;
     left: 0;
-    width: 600px;
+    width: 760px;
     height: 1px;
     background-color: #aeabab;
     @media (max-width: 500px) {
@@ -290,8 +329,7 @@ const Summary = styled.p`
     font-weight: 500;
     font-size: 18px;
     left: 47px;
-    top: 550px;
-    width: 260px;
+    top: 600px;
 
     @media (max-width: 500px) {
         top: 300px;
@@ -301,7 +339,7 @@ const Summary = styled.p`
 
 const TitleContainer = styled.div`
     position: absolute;
-    top: 485px;
+    top: 500px;
     left: 45px;
 
     @media (max-width: 500px) {
@@ -343,40 +381,65 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
     };
     return (
         <section id="project">
-            <motion.div initial="initial" animate="in" exit="out" variants={pageMove} transition={pageTransition}>
-                <Back>
-                    <Link to={'/'}>
-                        <LeftArrow />
-                    </Link>
+            <SectionHeader text=" PROJECT" />
+            <Header>
+                <Link to={'/'}>
+                    <LeftArrow />
+                </Link>
+                <Link to={'/skills'}>
+                    <RightArrow />
+                </Link>
+            </Header>
+            <StyledSwiper
+                spaceBetween={20} // 슬라이더 간격
+                slidesPerView={2} // 슬라이더 개수(3개를 보이게하려면 2.5가 맞음)
+                centeredSlides={true} //슬라이더가 항상 중앙에위치하게
+                centerInsufficientSlides={true} // 슬라이드 수가 slidesPerView보다 적을 경우에도 슬라이드가 중앙에 배치
+                // navigation // 슬라이더 prev,next
+                pagination={{ clickable: true }}
+                initialSlide={0}
+                effect="coverflow"
+                coverflowEffect={{
+                    rotate: 30, // 회전 각도
+                    stretch: 0, // 슬라이드 간의 간격 조정
+                    depth: 200, // 입체 효과의 깊이
+                    modifier: 1.5, // 슬라이드 사이의 거리
+                    slideShadows: true, // 슬라이드 그림자
+                }}
+                // autoplay={{
+                //     delay: 3000,
+                //     disableOnInteraction: false, // 사용자 만진 후에도 자동 전환 유지
+                // }}
+            >
+                <motion.div initial="initial" animate="in" exit="out" variants={pageMove} transition={pageTransition}>
+                    <Back>
+                        <GInner>
+                            <GArea>
+                                <Contents>
+                                    {ProjectsData.map((project) => (
+                                        <StyledSwiperSlide key={project.id}>
+                                            <ProjectItem key={project.id}>
+                                                <ImageContainer>
+                                                    <Image src={project.imageUrl} alt="Projects" />
+                                                    <Overlay>
+                                                        <Name>{project.name}</Name>
+                                                        <Skill>{project.skill}</Skill>
 
-                    <GInner>
-                        <SectionHeader text=" PROJECT" />
-                        <GArea>
-                            <Contents>
-                                {ProjectsData.map((project) => (
-                                    <ProjectItem key={project.id}>
-                                        <ImageContainer>
-                                            <Image src={project.imageUrl} alt="Projects" />
-                                            <Overlay>
-                                                <Name>{project.name}</Name>
-                                                <Skill>{project.skill}</Skill>
+                                                        <LearnMoreButton onClick={() => openModal(project)}>
+                                                            LEARN MORE
+                                                        </LearnMoreButton>
+                                                    </Overlay>
+                                                </ImageContainer>
+                                            </ProjectItem>
+                                        </StyledSwiperSlide>
+                                    ))}
+                                </Contents>
+                            </GArea>
+                        </GInner>
+                    </Back>
+                </motion.div>
+            </StyledSwiper>
 
-                                                <LearnMoreButton onClick={() => openModal(project)}>
-                                                    LEARN MORE
-                                                </LearnMoreButton>
-                                            </Overlay>
-                                        </ImageContainer>
-                                    </ProjectItem>
-                                ))}
-                            </Contents>
-                        </GArea>
-                    </GInner>
-                    <Link to={'/skills'}>
-                        {' '}
-                        <RightArrow />{' '}
-                    </Link>
-                </Back>
-            </motion.div>
             {modalOpen && (
                 <ModalBackground onClick={closeModalOnclick}>
                     <ModalWrapper>
@@ -392,8 +455,7 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
 
                             <a href={selectProject?.url} target="_blank">
                                 <ModalButton>
-                                    <IoEnter />
-                                    GO HOME
+                                    <FaHome style={{ width: '50px', height: '50px' }} />
                                 </ModalButton>
                             </a>
                             <CloseButton onClick={closeModal}>

@@ -17,7 +17,6 @@ ReactDOM.render(
     <React.StrictMode>
         <RecoilRoot>
             <App />
-            <Cursor />
         </RecoilRoot>
     </React.StrictMode>,
     document.getElementById('root')
