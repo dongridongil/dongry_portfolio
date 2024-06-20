@@ -5,6 +5,7 @@ import { isDarkAtom } from './atom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Lighttheme, darktheme } from './theme';
 import Toggle from './toggle';
+import Header from './Components/Header/Header';
 const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
@@ -72,6 +73,7 @@ table {
 
 
 body {
+
   font-family: 'Public Sans', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -109,6 +111,7 @@ function App() {
                 <button onClick={toggleDark}>
                     <Toggle />
                 </button>
+                <Header />
                 <GlobalStyle />
                 <AnimatedRoutes />
             </HashRouter>
