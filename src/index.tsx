@@ -5,7 +5,7 @@ import { RecoilRoot } from 'recoil';
 import App from './App';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import Cursor from './Cursor';
+
 <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css"

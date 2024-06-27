@@ -59,18 +59,18 @@ const SectionName = styled.div`
     color: ${(props) => props.theme.textColor};
 
     @media (max-width: 1200px) {
-        font-size: 6rem;
+        font-size: 3.5rem;
         margin-bottom: 4rem;
     }
 
     @media (max-width: 900px) {
         margin-bottom: 3rem;
-        font-size: 5.4rem;
+        font-size: 3rem;
     }
 
     @media (max-width: 500px) {
         /* padding-left: 3rem; */
         margin-bottom: 2rem;
-        font-size: 3rem;
+        font-size: 2rem;
     }
 `;

@@ -19,14 +19,14 @@ import 'swiper/css/navigation';
 SwiperCore.use([Navigation, Pagination, EffectCoverflow, Autoplay]);
 
 const Header = styled.div`
-    position: relative;
+    position: absolute;
     width: 100%;
-    height: 0;
+    height: 100px;
     z-index: 10;
 
     a {
         position: absolute;
-        top: 300px;
+        top: -100px;
         color: #000;
         text-decoration: none;
         font-size: 24px;
@@ -45,7 +45,7 @@ const Back = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -92,7 +92,7 @@ const ImageContainer = styled.div`
     background-position: center;
     background-size: cover;
     box-shadow: 0 0 10px #040404;
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         margin-left: 10px;
         width: 30vh;
         height: 30vh;
@@ -116,13 +116,13 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: transparent;
 
     margin-top: -250px;
     width: 600px;
     height: 1200px;
-    padding: 20px;
-    /* height: auto;
-    border: 3px solid red; */
+
+    /* /* height: auto; */
 `;
 
 const ProjectItem = styled.li`
@@ -138,7 +138,7 @@ const ProjectItem = styled.li`
         opacity: 1;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -155,8 +155,8 @@ const Name = styled.p`
     font-size: 60px;
     top: 80px;
 
-    @media (max-width: 500px) {
-        font-size: 20px;
+    @media (max-width: 1000px) {
+        font-size: 40px;
         margin-top: -22px;
     }
 `;
@@ -168,8 +168,8 @@ const Skill = styled.p`
     font-size: 36px;
     color: #e31b6d;
     top: 200px;
-    @media (max-width: 500px) {
-        font-size: 16px;
+    @media (max-width: 1000px) {
+        font-size: 22px;
         margin-top: -20px;
     }
 `;
@@ -188,6 +188,9 @@ const LearnMoreButton = styled.button`
     &:hover {
         background-color: #0056b3;
     }
+    @media (max-width: 1000px) {
+        bottom: 50px;
+    }
 `;
 
 ///모달창 부분
@@ -205,7 +208,7 @@ const ModalWrapper = styled.div`
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     z-index: 1000; //화면 상위로 이동
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         width: 350px;
         height: 500px;
     }
@@ -232,7 +235,7 @@ const ModalImg = styled.div<ModalImgProps>`
     align-items: center;
     justify-content: center;
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         width: 350px;
         height: 230px;
     }
@@ -263,7 +266,7 @@ const CloseButton = styled.button`
     background-color: white;
     border: none;
     cursor: pointer;
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         font-size: 18px;
         margin-bottom: -27px;
     }
@@ -283,7 +286,7 @@ const ModalButton = styled.button`
     display: flex;
     align-items: center;
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         font-size: 10px;
         padding: 8px 12px;
         margin-bottom: -30px;
@@ -303,7 +306,7 @@ const Title = styled.h2`
     color: black;
     font-weight: 700;
     margin-top: 20px;
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         font-size: 28px;
         margin-top: -10px;
     }
@@ -317,7 +320,7 @@ const Underscore = styled.p`
     width: 760px;
     height: 1px;
     background-color: #aeabab;
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         width: 260px;
     }
 `;
@@ -331,7 +334,7 @@ const Summary = styled.p`
     left: 47px;
     top: 600px;
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         top: 300px;
         font-size: 10px;
     }
@@ -342,7 +345,7 @@ const TitleContainer = styled.div`
     top: 500px;
     left: 45px;
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         top: 240px;
     }
 `;
@@ -392,10 +395,10 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
             </Header>
             <StyledSwiper
                 spaceBetween={20} // 슬라이더 간격
-                slidesPerView={2} // 슬라이더 개수(3개를 보이게하려면 2.5가 맞음)
+                slidesPerView={3} // 슬라이더 개수(3개를 보이게하려면 2.5가 맞음)
                 centeredSlides={true} //슬라이더가 항상 중앙에위치하게
                 centerInsufficientSlides={true} // 슬라이드 수가 slidesPerView보다 적을 경우에도 슬라이드가 중앙에 배치
-                // navigation // 슬라이더 prev,next
+                navigation={true} // 슬라이더 prev,next
                 pagination={{ clickable: true }}
                 initialSlide={0}
                 effect="coverflow"
@@ -403,9 +406,15 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
                     rotate: 30, // 회전 각도
                     stretch: 0, // 슬라이드 간의 간격 조정
                     depth: 200, // 입체 효과의 깊이
-                    modifier: 1.5, // 슬라이드 사이의 거리
-                    slideShadows: true, // 슬라이드 그림자
+                    modifier: 1, // 슬라이드 사이의 거리
+                    slideShadows: false, // 슬라이드 그림자
                 }}
+                // breakpoints={{
+                //     1000: {
+                //         slidesPerView: 1,
+                //         spaceBetween: 10,
+                //     },
+                // }}
                 // autoplay={{
                 //     delay: 3000,
                 //     disableOnInteraction: false, // 사용자 만진 후에도 자동 전환 유지

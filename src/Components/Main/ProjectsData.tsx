@@ -35,7 +35,7 @@ const ProjectsData: Project[] = [
           구분하는 작업을 통하여 서버 사이드 렌더링인 NEXT.JS와 vercel 을 활용한 배포도  
           배워볼수있는 시간이였습니다.
           `,
-        url: 'https://nextjs-movies-p8cz74td9-dongrys-projects.vercel.app/',
+        url: 'https://nextjs-movies-blond-five.vercel.app/',
     },
     {
         id: 2,

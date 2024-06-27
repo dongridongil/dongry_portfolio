@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
+import kdi from '../../asset/imgs/kdi3.png';
 const Back = styled.div`
     display: flex;
     align-items: center;
@@ -12,7 +12,7 @@ const Back = styled.div`
     width: 100%; /* 추가 */
     overflow-x: hidden; /* 모바일 뷰포트에서의 넘침 방지 */
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         overflow-x: hidden;
         margin: 0;
     }
@@ -24,14 +24,14 @@ const H2 = styled.h2`
     font-size: 10em;
     font-weight: 700;
     padding: 0 100px;
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         display: flex;
         flex-direction: column;
         text-align: center;
         justify-content: center;
-        font-size: 0.6em; /* 작은 화면에서 글자 크기 조정 */
-        padding: 0 0; /* 작은 화면에서 패딩 조정 */
-        margin-bottom: 100px; /* 마진 조정 */
+        font-size: 0.6em;
+        padding: 0 0;
+        margin-bottom: 100px;
     }
 `;
 
@@ -42,7 +42,7 @@ const Im = styled.h2`
     padding: 50px 20px;
     margin-bottom: 20px;
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         font-size: 3em; /* 작은 화면에서 글자 크기 조정 */
         padding: 0 0; /* 작은 화면에서 패딩 조정 */
     }
@@ -81,7 +81,7 @@ const Span = styled.span<SpanProps>`
     animation: ${displayanimation} 9s infinite;
     animation-delay: calc(-3s * var(--i));
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         font-size: 3em; /* 작은 화면에서 글자 크기 조정 */
         margin-left: 0;
         margin-bottom: 100px; /* 마진 조정 */
@@ -102,6 +102,27 @@ const Span = styled.span<SpanProps>`
     }
 `;
 
+const Image = styled.img`
+    /* display: block; */
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    position: absolute;
+    left: 50px;
+    top: -30px;
+    @media (max-width: 1000px) {
+        left: 50px;
+        top: 0;
+        width: 150px;
+        height: 150px;
+    }
+    @media (max-width: 500px) {
+        left: 50px;
+        top: 0;
+        width: 100px;
+        height: 100px;
+    }
+`;
 /* 입장 버튼*/
 const Enter = styled.div`
     text-decoration: none !important;
@@ -113,12 +134,12 @@ const Enter = styled.div`
     text-transform: 4px;
     letter-spacing: 4px;
 
-    font-size: 2.5rem;
+    font-size: 2rem;
     overflow: hidden;
     transition: 0.2s;
     font-weight: 600;
 
-    @media (max-width: 500px) {
+    @media (max-width: 1000px) {
         font-size: 1.5em; /* 작은 화면에서 글자 크기 조정 */
         padding: 20px 30px; /* 작은 화면에서 패딩 조정 */
         margin-top: 250px; /* 마진 조정 */
@@ -236,7 +257,7 @@ const Main = () => {
                             <span />
                             <span />
                             <span />
-                            ENTER
+                            입장하기
                         </StyledLink>
                     </Enter>
                 )}
