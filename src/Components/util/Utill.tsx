@@ -23,6 +23,8 @@ const LeftArrow = styled.div`
     }
 
     @media (max-width: 500px) {
+        margin-top: 100px;
+        margin-left: 130px;
         width: 25px;
         height: 25px;
     }
@@ -50,6 +52,8 @@ const RightArrow = styled.div`
     }
 
     @media (max-width: 500px) {
+        margin-top: 100px;
+        margin-right: 130px;
         width: 25px;
         height: 25px;
     }

@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import kdi from '../../asset/imgs/kdi3.png';
+
 const Back = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
 
     min-height: 100vh;
-    width: 100%; /* 추가 */
+    width: 100%;
     overflow-x: hidden; /* 모바일 뷰포트에서의 넘침 방지 */
 
     @media (max-width: 1000px) {
@@ -43,8 +43,8 @@ const Im = styled.h2`
     margin-bottom: 20px;
 
     @media (max-width: 1000px) {
-        font-size: 3em; /* 작은 화면에서 글자 크기 조정 */
-        padding: 0 0; /* 작은 화면에서 패딩 조정 */
+        font-size: 3em;
+        padding: 0 0;
     }
 `;
 
@@ -102,27 +102,6 @@ const Span = styled.span<SpanProps>`
     }
 `;
 
-const Image = styled.img`
-    /* display: block; */
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    position: absolute;
-    left: 50px;
-    top: -30px;
-    @media (max-width: 1000px) {
-        left: 50px;
-        top: 0;
-        width: 150px;
-        height: 150px;
-    }
-    @media (max-width: 500px) {
-        left: 50px;
-        top: 0;
-        width: 100px;
-        height: 100px;
-    }
-`;
 /* 입장 버튼*/
 const Enter = styled.div`
     text-decoration: none !important;
@@ -140,9 +119,9 @@ const Enter = styled.div`
     font-weight: 600;
 
     @media (max-width: 1000px) {
-        font-size: 1.5em; /* 작은 화면에서 글자 크기 조정 */
-        padding: 20px 30px; /* 작은 화면에서 패딩 조정 */
-        margin-top: 250px; /* 마진 조정 */
+        font-size: 1.5em;
+        padding: 20px 30px;
+        margin-top: 250px;
     }
     &:hover {
         color: #ffffff;

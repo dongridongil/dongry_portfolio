@@ -3,7 +3,6 @@ import { GArea, GInner, GWrapper, SectionHeader } from '../../GlobalComponents';
 import React, { useState } from 'react';
 import ProjectsData, { Project } from './ProjectsData';
 import { IoMdClose } from 'react-icons/io';
-import { IoEnter } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { LeftArrow, RightArrow } from '../util/Utill';
 import { motion } from 'framer-motion';
@@ -39,6 +38,13 @@ const Header = styled.div`
             right: -100px;
         }
     }
+    @media (max-width: 1000px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin: 0;
+    }
 `;
 
 const Back = styled.div`
@@ -50,7 +56,7 @@ const Back = styled.div`
         align-items: center;
         justify-content: center;
         overflow-x: hidden;
-        margin: 0;
+        overflow-y: hidden;
     }
 `;
 
@@ -96,6 +102,7 @@ const ImageContainer = styled.div`
         margin-left: 10px;
         width: 30vh;
         height: 30vh;
+        margin-top: 100px;
     }
 `;
 
@@ -122,6 +129,9 @@ const StyledSwiperSlide = styled(SwiperSlide)`
     width: 600px;
     height: 1200px;
 
+    @media (max-width: 1000px) {
+        margin-top: -450px;
+    }
     /* /* height: auto; */
 `;
 
@@ -159,6 +169,10 @@ const Name = styled.p`
         font-size: 40px;
         margin-top: -22px;
     }
+    @media (max-width: 700px) {
+        font-size: 20px;
+        margin-top: -22px;
+    }
 `;
 
 const Skill = styled.p`
@@ -170,6 +184,11 @@ const Skill = styled.p`
     top: 200px;
     @media (max-width: 1000px) {
         font-size: 22px;
+        margin-top: -20px;
+    }
+    @media (max-width: 500px) {
+        display: none;
+        font-size: 16px;
         margin-top: -20px;
     }
 `;
@@ -190,6 +209,9 @@ const LearnMoreButton = styled.button`
     }
     @media (max-width: 1000px) {
         bottom: 50px;
+    }
+    @media (max-width: 700px) {
+        bottom: 5;
     }
 `;
 
@@ -409,42 +431,32 @@ const Projects = ({ projectsData }: { projectsData: Project[] }) => {
                     modifier: 1, // 슬라이드 사이의 거리
                     slideShadows: false, // 슬라이드 그림자
                 }}
-                // breakpoints={{
-                //     1000: {
-                //         slidesPerView: 1,
-                //         spaceBetween: 10,
-                //     },
-                // }}
-                // autoplay={{
-                //     delay: 3000,
-                //     disableOnInteraction: false, // 사용자 만진 후에도 자동 전환 유지
-                // }}
+                autoplay={{
+                    delay: 3000,
+                    disableOnInteraction: false, // 사용자 만진 후에도 자동 전환 유지
+                }}
             >
                 <motion.div initial="initial" animate="in" exit="out" variants={pageMove} transition={pageTransition}>
                     <Back>
-                        <GInner>
-                            <GArea>
-                                <Contents>
-                                    {ProjectsData.map((project) => (
-                                        <StyledSwiperSlide key={project.id}>
-                                            <ProjectItem key={project.id}>
-                                                <ImageContainer>
-                                                    <Image src={project.imageUrl} alt="Projects" />
-                                                    <Overlay>
-                                                        <Name>{project.name}</Name>
-                                                        <Skill>{project.skill}</Skill>
+                        <Contents>
+                            {ProjectsData.map((project) => (
+                                <StyledSwiperSlide key={project.id}>
+                                    <ProjectItem key={project.id}>
+                                        <ImageContainer>
+                                            <Image src={project.imageUrl} alt="Projects" />
+                                            <Overlay>
+                                                <Name>{project.name}</Name>
+                                                <Skill>{project.skill}</Skill>
 
-                                                        <LearnMoreButton onClick={() => openModal(project)}>
-                                                            LEARN MORE
-                                                        </LearnMoreButton>
-                                                    </Overlay>
-                                                </ImageContainer>
-                                            </ProjectItem>
-                                        </StyledSwiperSlide>
-                                    ))}
-                                </Contents>
-                            </GArea>
-                        </GInner>
+                                                <LearnMoreButton onClick={() => openModal(project)}>
+                                                    LEARN MORE
+                                                </LearnMoreButton>
+                                            </Overlay>
+                                        </ImageContainer>
+                                    </ProjectItem>
+                                </StyledSwiperSlide>
+                            ))}
+                        </Contents>
                     </Back>
                 </motion.div>
             </StyledSwiper>
