@@ -70,9 +70,9 @@ src
 
 ### 모바일
 
-
-<img src="https://github.com/dongridongil/react-port/assets/108976641/54fc08ab-4b52-4d44-b415-5cc6641a8dc7"  width:"400" height:"500" />
-<img src="https://github.com/dongridongil/react-port/assets/108976641/05877283-0502-4ad8-86c1-3d44ae9c5e68"  width:"400" height:"500" />
+<img src="https://github.com/dongridongil/NEXT-MOVIE/assets/108976641/47fae427-9c77-44d9-961a-338dd75c13a3"  width="400" height="600" />
+<img src="https://github.com/dongridongil/react-port/assets/108976641/54fc08ab-4b52-4d44-b415-5cc6641a8dc7"  width="400" height="600" />
+<img src="https://github.com/dongridongil/react-port/assets/108976641/05877283-0502-4ad8-86c1-3d44ae9c5e68"  width="400" height="600" />
 
 
 
