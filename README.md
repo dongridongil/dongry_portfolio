@@ -69,7 +69,8 @@ src
 ![image](https://github.com/dongridongil/react-port/assets/108976641/982f0a23-3ad8-47e5-a25a-a5de721b78d4)
 
 ### 모바일
-<img src="https://github.com/dongridongil/react-port/assets/108976641/54fc08ab-4b52-4d44-b415-5cc6641a8dc7" width:"500" height:"600" />
+
+<img src="https://github.com/dongridongil/react-port/assets/108976641/54fc08ab-4b52-4d44-b415-5cc6641a8dc7"  width:"400" height:"600" />
 
 ![image](https://github.com/dongridongil/react-port/assets/108976641/05877283-0502-4ad8-86c1-3d44ae9c5e68)
 
