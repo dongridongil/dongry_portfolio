@@ -1,5 +1,10 @@
 # 프론트엔드 개발 취업 을 위한 포트폴리오!
 
+
+## 홈페이지
+https://dongridongil.github.io/react-port/
+
+
 ## 개발환경
 
 
@@ -50,18 +55,18 @@ src
 ## 웹 화면 
 
 ### 홈 
-![image](https://github.com/dongridongil/react-port/assets/108976641/a53993f2-b42d-4642-9aa5-0ceaebe16110)
+![image](https://github.com/dongridongil/react-port/assets/108976641/712e3a9a-b7da-452d-9e90-e53e85b84ce5)
+
 
 ### 프로젝트 
 
-![image](https://github.com/dongridongil/react-port/assets/108976641/d6d7508f-7aed-48b9-a735-f83cb35deb57)
+![image](https://github.com/dongridongil/react-port/assets/108976641/b2e4ff63-6771-4d75-bf48-80f919698418)
 
-### about 
 
-![image](https://github.com/dongridongil/react-port/assets/108976641/9f5a3573-e4d3-49ae-b2cb-453ef6c7badf)
 
-### skill
+### 스킬
 
-![image](https://github.com/dongridongil/react-port/assets/108976641/d5d54239-3fad-42ac-9d07-2dc70b2b4e89)
+![image](https://github.com/dongridongil/react-port/assets/108976641/982f0a23-3ad8-47e5-a25a-a5de721b78d4)
+
 
 
