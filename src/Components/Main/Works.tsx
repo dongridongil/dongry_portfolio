@@ -424,7 +424,7 @@ const Works = () => {
                                     </Summary2>
                                     <Skill2>FIGMA , HTML , CSS </Skill2>
                                     <LearnMoreButton>
-                                        <a href="dongry_portfolio/workdata/work.html" target="_blank">
+                                        <a href="workdata/work.html" target="_blank">
                                             바로가기
                                         </a>
                                     </LearnMoreButton>
