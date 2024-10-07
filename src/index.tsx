@@ -1,7 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import { RecoilRoot } from 'recoil';
-
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import App from './App';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -13,11 +12,16 @@ import 'bootstrap/dist/css/bootstrap.css';
     crossOrigin="anonymous"
 ></link>;
 
-ReactDOM.render(
-    <React.StrictMode>
-        <RecoilRoot>
-            <App />
-        </RecoilRoot>
-    </React.StrictMode>,
-    document.getElementById('root')
-);
+const rootElement = document.getElementById('root');
+
+// createRoot로 root 생성 후 렌더링
+if (rootElement) {
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(
+        <React.StrictMode>
+            <RecoilRoot>
+                <App />
+            </RecoilRoot>
+        </React.StrictMode>
+    );
+}

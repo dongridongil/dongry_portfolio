@@ -1,7 +1,6 @@
 import ReactSvg from '../../asset/imgs/react.svg';
 import GitSvg from '../../asset/imgs/git.svg';
 import Html5Svg from '../../asset/imgs/html5.svg';
-import DbSvg from '../../asset/imgs/db.svg';
 import NodeSvg from '../../asset/imgs/node.svg';
 import JavascriptSvg from '../../asset/imgs/javascript.svg';
 import TypeScriptSvg from '../../asset/imgs/typescript.svg';
@@ -35,13 +34,6 @@ const SkillsData = [
         svg: Rnpng,
         comment:
             'React Native를 사용하여 크로스 플랫폼 모바일 애플리케이션을 배우고 개발하고 있으며, 지속적인 발전을 위해 노력하고 있습니다.',
-    },
-    {
-        id: 5,
-        name: 'Vue',
-        svg: Vuejpg,
-        comment:
-            '요즘 많이 빠져있는 언어 입니다. 쉽고 빠르고 무엇보다 팀원과 통일성 있는 코드로 협업할수 있다는 장점이 큰 매력인거 같습니다.',
     },
     {
         id: 6,
@@ -84,13 +76,6 @@ const SkillsData = [
         svg: CloudFlareSvg,
         comment:
             ' CloudFlare 의 웹 방화벽 기능을 사용하여 악성 트래픽 을 필터링하고 악성 봇을 보호하는 기능을 사용해보았습니다. 쉽게 SSL 인증서를 설정할수있어서 웹사이트 보안을 강화 하였습니다.  ',
-    },
-    {
-        id: 12,
-        name: '',
-        svg: LaravelSvg,
-        comment:
-            ' 회사 프로젝트중 php 를 사용하였으며 php 프레임워크인 라라벨을 사용하였습니다. 직관적인 문법을 제공하며 php 프레임워크지만 프론트에서는 자바스크립트를 사용할수있습니다 그리고 라우팅과 mvc 아키텍처에 대해 많이 알게되는 시간이였습니다.   ',
     },
 ];
 

@@ -1,6 +1,6 @@
 {
-    "homepage": "https://dongridongil.github.io/react-port",
-    "name": "react-port",
+    "homepage": "https://dongridongil.github.io/dongry_portfolio",
+    "name": "dongry_portfolio",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
@@ -16,6 +16,7 @@
         "@types/react-dom": "^18.2.24",
         "bootstrap": "^5.3.3",
         "framer-motion": "^11.0.28",
+        "gsap": "^3.12.5",
         "react": "^18.2.0",
         "react-animation-on-scroll": "^5.1.0",
         "react-bootstrap": "^2.10.2",

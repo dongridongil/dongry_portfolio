@@ -1,0 +1,389 @@
+<link type="text/css" rel="stylesheet" href="./Style.css?Ver=2024.09" />
+<body>
+    <div id="wrap">
+        <div id="top_menu">
+            <header>
+                <div class="header_logo" onclick="location.href='/dongry_portfolio';">
+                    <img src="./Images/header_logo.png" />
+                </div>
+                <div class="header_container">
+                    <div class="header_login">
+                        <input class="userId" type="text" placeholder="아이디를 입력하세요" />
+                        <input class="userPassword" type="text" placeholder="비밀번호를 입력하세요" />
+                    </div>
+                    <div class="header_logininfo">
+                        <div class="header_logininfo_check">
+                            <input type="checkbox" />
+                            아이디 저장하기
+                            <span>아이디/ 비밀번호 찾기</span>
+                        </div>
+                        <div>
+                            <button style="width: 100px; height: 40px" class="Btn_Main_Small">로그인</button>
+                            <button style="width: 100px; height: 40px" class="Btn_White_Small">회원가입</button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div class="sub_container">
+            <div class="sub_menu">
+                <h4>문자발송</h4>
+                <h3>일반 문자</h3>
+                <span>|</span>
+                <h3>선거 문자</h3>
+                <span>|</span>
+                <h3>선거 20건 문자</h3>
+                <span>|</span>
+                <h3>내용 다르게 보내기</h3>
+            </div>
+        </div>
+        <div class="main_menu">
+            <div class="main_container">
+                <div class="mobile_one_container">
+                    <div class="mobile_one_title">
+                        <h3>1. 발송 구분</h3>
+                        <span>업무/광고 선택</span>
+                    </div>
+                    <div class="mobile_one_content">
+                        <label>
+                            <input name="BalsongType" type="radio" />
+                            <div class="mobile_one_content_select">
+                                <h2>업무/공지</h2>
+                                <span>일반적인 업무 용도 문자발송</span>
+                            </div>
+                        </label>
+                        <label>
+                            <input name="BalsongType" type="radio" />
+                            <div class="mobile_one_content_select">
+                                <h2>광고(표기)</h2>
+                                <span>(광고)표기와 080무료수신거부 번호 추가하여 발송</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="mobile_two_container">
+                    <div class="mobile_two_title">
+                        <h3>2.발신번호선택</h3>
+                        <span>사전 등록 승인된 번호만 선택가능</span>
+                    </div>
+                    <div class="mobile_two_content">
+                        <h1>현재 선택된 발신번호</h1>
+                        <div class="mobile_two_content_load">
+                            <input id="balsin_number" type="text" />
+                            <button class="Btn_White_Small">발신번호 불러오기</button>
+                            <button class="Btn_Main_Small">발신번호 등록/관리</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mobile_three_container">
+                    <div class="mobile_three_title">
+                        <h3>3.문자내용작성</h3>
+                        <div class="mobile_three_submit">
+                            <h2>문자제목</h2>
+                            <input type="text" id="balsin_title" placeholder="문자 제목 및 관리 제목 입력" />
+                            <div>
+                                <div class="mobile_three_content">
+                                    <h2>(광고)</h2>
+                                    <input type="text" id="balsin_title" placeholder="회사명 또는 서비스명 입력" />
+                                    <textarea></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile_three_msg">
+                            <h1>MMS</h1>
+                            <span>0 /90 Bytes</span>
+                        </div>
+                        <div class="mobile_three_attach">
+                            <div class="mobile_three_img">
+                                <h1>사진 첨부</h1>
+                            </div>
+                            <div class="mobile_three_imgbox">+</div>
+                            <div class="mobile_three_imgbox">+</div>
+                            <div class="mobile_three_imgbox">+</div>
+                        </div>
+                        <div class="mobile_three_menu">
+                            <div class="mobile_three_filebox">파일 첨부 /관리</div>
+                            <div class="mobile_three_menubox">치환어 선택</div>
+                            <div class="mobile_three_menubox">특수문자</div>
+                        </div>
+                        <div class="mobile_three_menu">
+                            <div class="mobile_three_menubox">문자내용 저장</div>
+                            <div class="mobile_three_menubox">문자 불러오기</div>
+                            <div class="mobile_three_menubox">기본문자 설정</div>
+                            <div style="color: red; border: 1px solid red" class="mobile_three_menubox">
+                                내용 초기화
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mobile_three_title2">
+                        <div>
+                            <h3>#.문자 미리보기</h3>
+                            <span style="margin-left: 12px; color: #555555; font-size: 16px"
+                                >* 단말기에 따라 다르게 보일 수 있음</span
+                            >
+                        </div>
+                        <div class="mobile_three_preview">
+                            <div class="mobile_three_previewbox">
+                                <div class="mobile_three_preview_service">MMS</div>
+                                <div class="mobile_three_preview_number">010-0001-0001</div>
+                                <div class="mobile_three_preview_container">
+                                    <div class="mobile_three_preview_content"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mobile_three_preview_button">
+                            <button class="Btn_Main_Small">치환어 포함 미리보기</button>
+                            <button class="Btn_White_Small">1건 테스트 발송</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile_four_container">
+                    <div>
+                        <h3>4.수신처 선택</h3>
+                        <span>받는 사람 전화번호 추가</span>
+                    </div>
+                    <div class="mobile_four_grid">
+                        <div class="mobile_four_leftside">
+                            <h2>전화번호 붙여넣기</h2>
+                            <span>치환어 없는 빠른 문자 발송</span>
+                            <div class="mobile_four_button">
+                                <button id="add_number" class="Btn_Main_Medium">수신처에 전화번호 추가하기</button>
+                            </div>
+                            <textarea
+                                placeholder="
+			
+			
+				
+	최대 1만 건 붙여넣기 가능
+
+	초과 시 엑셀파일 불러오기 이용"
+                            ></textarea>
+                            <div class="mobile_four_receptionCount">
+                                <h1>등록한 총 수신처 수</h1>
+                                <p>0 개</p>
+                            </div>
+                        </div>
+                        <div class="mobile_four_rightside">
+                            <h2>수신처 추가 목록</h2>
+                            <span>치환어 적용 또는 저장한 주소록 번호 추가</span>
+                            <div class="mobile_four_button2">
+                                <div>
+                                    <button id="excel_box" class="Btn_White_Small">엑셀파일 불러오기</button>
+                                    <button id="address_box" class="Btn_White_Small">주소록 불러오기</button>
+                                </div>
+                                <button
+                                    id="refresh_box"
+                                    style="color: red; border: 1px solid red; margin-left: auto"
+                                    class="Btn_White_Small"
+                                >
+                                    수신처 초기화
+                                </button>
+                            </div>
+                            <div class="mobile_four_cotainer">
+                                <div class="mobile_four_list">
+                                    <div class="mobile_four_excel">
+                                        <div>
+                                            <h1>엑셀 붙여넣기 목록</h1>
+                                            <h1>[0]</h1>
+                                        </div>
+                                        <p>목록제외</p>
+                                    </div>
+                                    <div class="mobile_four_address">
+                                        <div>
+                                            <h1>주소록 / 재발송 목록</h1>
+                                            <h1>[0]</h1>
+                                        </div>
+                                        <p>목록제외</p>
+                                    </div>
+                                    <div class="mobile_four_phonenumber">
+                                        <div>
+                                            <h1>전화번호 붙여넣기 목록</h1>
+                                            <h1>[0]</h1>
+                                        </div>
+                                        <p>목록제외</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile_five_container">
+                    <div class="mobile_five_title">
+                        <h3>5.예약 발송</h3>
+                        <span>최대 180일 이내에서 예약발송 가능</span>
+                    </div>
+                    <div class="mobile_five_content">
+                        <label>
+                            <input name="TimeType" type="radio" />
+                            <div class="mobile_five_content_select">
+                                <h2>즉시 발송(기본값)</h2>
+                            </div>
+                        </label>
+                        <label>
+                            <input name="TimeType" type="radio" />
+                            <div class="mobile_five_content_select">
+                                <h2>예약 발송</h2>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="mobile_six_container">
+                    <h3>6.발송 추가 옵션</h3>
+                    <div class="mobile_six_option">
+                        <label class="Division">
+                            <input id="Division" type="checkbox" />
+                            <h2>분할 발송</h2>
+                            <div id="mobile_six_select" class="mobile_six_select">
+                                <select class="select" name="divi_min">
+                                    <option>10분 간격</option>
+                                    <option>15분 간격</option>
+                                    <option>20분 간격</option>
+                                    <option>25분 간격</option>
+                                    <option>30분 간격</option>
+                                    <option>35분 간격</option>
+                                    <option>40분 간격</option>
+                                    <option>45분 간격</option>
+                                    <option>50분 간격</option>
+                                    <option>55분 간격</option>
+                                    <option>60분 간격</option>
+                                    <option>1시간 간격</option>
+                                    <option>2시간 간격</option>
+                                </select>
+                                <select name="divi_send">
+                                    <option>10 건씩 발송</option>
+                                    <option>20 건씩 발송</option>
+                                    <option>30 건씩 발송</option>
+                                    <option>40 건씩 발송</option>
+                                    <option>50 건씩 발송</option>
+                                    <option>60 건씩 발송</option>
+                                    <option>70 건씩 발송</option>
+                                    <option>80 건씩 발송</option>
+                                    <option>90 건씩 발송</option>
+                                    <option>100 건씩 발송</option>
+                                    <option>200 건씩 발송</option>
+                                    <option>300 건씩 발송</option>
+                                    <option>400 건씩 발송</option>
+                                    <option>500 건씩 발송</option>
+                                    <option>600 건씩 발송</option>
+                                    <option>700 건씩 발송</option>
+                                    <option>800 건씩 발송</option>
+                                    <option>900 건씩 발송</option>
+                                    <option>1,000 건씩 발송</option>
+                                    <option>2,000 건씩 발송</option>
+                                </select>
+                            </div>
+                        </label>
+                        <label class="Duplication">
+                            <input id="Duplication" type="checkbox" checked />
+                            <h2>중복 수신처 제거하고 발송</h2>
+                            <span>*체크 해제 시, 중복 번호 제거하지 않고 발송</span>
+                        </label>
+                        <label class="Refresh">
+                            <input id="Refresh" type="checkbox" />
+                            <h2>발송 후 화면 새로고침 하지 않기</h2>
+                        </label>
+                        <label class="No080">
+                            <input id="No080" type="checkbox" />
+                            <h2>내용에 080무료수신거부 정보 추가하기</h2>
+                        </label>
+                    </div>
+                </div>
+                <div class="mobile_send">
+                    <button class="Btn_White_Big">미리보기</button>
+                    <button class="Btn_Main">문자 발송</button>
+                </div>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="preview_button" class="preview_button">
+        <div class="preview-text">
+            <img src="Images/preview_text.png" />
+        </div>
+        <div class="preview-image"><img src="Images/preview.png" /></div>
+    </div>
+    <div id="preview" class="preview">
+        <div class="previewbox">
+            <div id="preview_close" class="preview_close">X</div>
+            <div class="preview_service">MMS</div>
+            <div class="preview_number">010-0001-0001</div>
+            <div class="preview_container">
+                <div class="preview_content"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="bottom_nav" class="bottom_nav">
+        <div class="bottom_home">
+            <img src="Images/mobile_home.png" />
+            <h1>홈화면</h1>
+        </div>
+        <div class="bottom_home">
+            <img src="Images/mobile_munja.png" />
+            <h1>문자</h1>
+        </div>
+        <div class="bottom_home">
+            <img src="Images/mobile_chung.png" />
+            <h1>충전</h1>
+        </div>
+        <div class="bottom_home">
+            <img src="Images/mobile_result.png" />
+            <h1>발송결과</h1>
+        </div>
+        <div class="bottom_home">
+            <img src="Images/mobile_top.png" />
+            <h1>맨위로</h1>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.getElementById('preview_button').addEventListener('click', function () {
+        document.getElementById('preview').classList.toggle('show');
+        document.getElementById('preview_button').classList.toggle('show');
+    });
+
+    document.getElementById('Division').addEventListener('change', function () {
+        let division = document.getElementById('Division');
+        let test = document.getElementById('mobile_six_select');
+        if (division.checked) {
+            test.style.display = 'flex';
+        } else {
+            test.style.display = 'none';
+        }
+    });
+
+    function test() {
+        const textarea = document.querySelector('.mobile_four_leftside textarea');
+        if (window.innerWidth <= 768) {
+            textarea.placeholder = '전화번호를 입력 해주세요';
+        }
+
+        const button = document.querySelector('.Btn_Main_Medium');
+        if (window.innerWidth <= 768) {
+            button.textContent = '수신처 추가';
+        } else {
+            button.textContent = '수신처에 전화번호 추가하기';
+        }
+
+        const address = document.querySelector('#address_box');
+        if (window.innerWidth <= 768) {
+            address.textContent = '주소록';
+        } else {
+            address.textContent = '주소록 불러오기';
+        }
+
+        const refresh = document.querySelector('#refresh_box');
+        if (window.innerWidth <= 768) {
+            refresh.textContent = '초기화';
+        } else {
+            refresh.textContent = '수신처 초기화';
+        }
+    }
+
+    test();
+    window.addEventListener('resize', test);
+</script>

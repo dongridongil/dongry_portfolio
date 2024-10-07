@@ -6,11 +6,17 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { motion } from 'framer-motion';
+import { SectionHeader2 } from '../../GlobalComponents';
 
 const Back = styled.div`
+    width: 100%;
+    position: absolute;
     display: flex;
+
     align-items: center;
     justify-content: center;
+    background-color: #f0f0f0;
+
     @media (max-width: 500px) {
         overflow-x: hidden;
         margin: 0;
@@ -20,9 +26,21 @@ const Back = styled.div`
 const Inner = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 100%;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+`;
+
+const Section = styled.section`
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background: url();
+    background-size: cover; */
 `;
 
 const ImgWrapper = styled.div`
@@ -49,57 +67,21 @@ const Image = styled.img`
     margin-left: 5px;
 `;
 const Footerspan = styled.span`
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     position: absolute;
     bottom: 0;
-    color: white;
+    color: black;
     @media (max-width: 500px) {
         margin-bottom: -150px;
     }
 `;
 
-const Section = styled.section`
-    color: white;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 50px 100px;
-    /* background: url();
-    background-size: cover; */
-`;
-const Content = styled.div`
-    /* max-width: 800px; */
-    position: absolute;
-    top: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    color: ${(props) => props.theme.textColor};
-
-    @media (max-width: 500px) {
-        top: 50px;
-        overflow-x: hidden;
-        margin: 0;
-    }
-    h2 {
-        font-size: 100px;
-        font-weight: 700;
-        @media (max-width: 500px) {
-            font-size: 50px;
-        }
-    }
-`;
 const Container = styled.div`
     width: 100%;
+    padding: 100px 0 450px 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
     gap: 200px;
     @media (max-width: 500px) {
         margin-top: 70px;
@@ -144,7 +126,7 @@ const Icon = styled.div`
         font-size: 12px;
     }
 `;
-const Text = styled.text`
+const Text = styled.div`
     display: flex;
     margin-left: 20px;
     margin-top: -5px;
@@ -164,14 +146,15 @@ const Text = styled.text`
         }
     }
     p {
-        color: ${(props) => props.theme.textColor};
+        color: #000;
         margin-top: -5px;
         @media (max-width: 500px) {
-            wdith: 100%;
+            width: 100%;
             white-space: nowrap;
         }
     }
 `;
+
 const ContactForm = styled.form`
     display: flex;
     flex-direction: column;
@@ -234,7 +217,7 @@ const InputBox = styled.div`
     textarea:valid ~ span {
         color: #e91e63;
         font-size: 12px;
-        transform: tranlate(-20px);
+        transform: translateY(-20px);
     }
 
     input[type='submit'] {
@@ -251,104 +234,80 @@ const InputBox = styled.div`
     }
 `;
 
-const pageMove = {
-    initial: { opacity: 0, x: '100vw' },
-    in: { opacity: 1, x: 0 },
-    out: { opacity: 0, x: '-100vw' },
-};
-
-const pageTransition = {
-    type: 'tween',
-    duration: 0.5,
-};
-
 const Footer = () => {
     return (
-        <motion.div initial="initial" animate="in" exit="out" variants={pageMove} transition={pageTransition}>
-            <Back>
-                <Link to="/skills">
-                    {' '}
-                    <LeftArrow />
-                </Link>
-                <Content>
-                    <h2>Contact Me</h2>
-                </Content>
-                <Inner>
-                    <Section>
-                        <Container>
-                            <ContactInfo>
-                                <Box>
-                                    <ImgWrapper>
-                                        <A href="https://github.com/dongridongil" target="_blank">
-                                            <Image src={Gitimg} />
-                                        </A>
-                                    </ImgWrapper>
-                                    <Text>
-                                        <h3>Github </h3>
-                                        <p>Github 주소 입니다.</p>
-                                    </Text>
-                                </Box>
-                                <Box>
-                                    <ImgWrapper>
-                                        <A href="https://velog.io/@ehddlfwkd/posts" target="_blank">
-                                            <Image src={Velogimg} />
-                                        </A>
-                                    </ImgWrapper>
-                                    <Text>
-                                        <h3>Velog</h3>
-                                        <p> Velog 주소 입니다.</p>
-                                    </Text>
-                                </Box>
-                                <Box>
-                                    <Icon>
-                                        <FontAwesomeIcon style={{ color: 'black' }} icon={faPhone} />
-                                    </Icon>
-                                    <Text>
-                                        <h3>Phone</h3>
-                                        <p>010-9734-9171</p>
-                                    </Text>
-                                </Box>
-                                <Box>
-                                    <Icon>
-                                        <FontAwesomeIcon style={{ color: 'black' }} icon={faEnvelope} />
-                                    </Icon>
-                                    <Text>
-                                        <h3>Email</h3>
-                                        <p>ehddlfwkd32@naver.com</p>
-                                    </Text>
-                                </Box>
-                            </ContactInfo>
-                            <ContactForm>
-                                <form>
-                                    <h2>Send Message</h2>
-                                    <InputBox>
-                                        <input type="text" name="" required></input>
-                                        <span>Full Name</span>
-                                    </InputBox>
-                                    <InputBox>
-                                        <input type="text" name="" required></input>
-                                        <span>Email</span>
-                                    </InputBox>
-                                    <InputBox>
-                                        <textarea required></textarea>
-                                        <span>Message</span>
-                                    </InputBox>
-                                    <InputBox>
-                                        <input type="submit" name="" value="Send"></input>
-                                    </InputBox>
-                                </form>
-                            </ContactForm>
-                        </Container>
-                    </Section>
-                </Inner>
-                <Link to="/">
-                    {' '}
-                    <RightArrow />
-                </Link>
-
-                <Footerspan> © 2024 Designed by KIM Di. All rights reserved.</Footerspan>
-            </Back>
-        </motion.div>
+        <Back>
+            <Inner>
+                <SectionHeader2 text="Contacts" />
+                <Section>
+                    <Container>
+                        <ContactInfo>
+                            <Box>
+                                <ImgWrapper>
+                                    <A href="https://github.com/dongridongil" target="_blank">
+                                        <Image src={Gitimg} />
+                                    </A>
+                                </ImgWrapper>
+                                <Text>
+                                    <h3>Github </h3>
+                                    <p>Github 주소 입니다.</p>
+                                </Text>
+                            </Box>
+                            <Box>
+                                <ImgWrapper>
+                                    <A href="https://velog.io/@ehddlfwkd/posts" target="_blank">
+                                        <Image src={Velogimg} />
+                                    </A>
+                                </ImgWrapper>
+                                <Text>
+                                    <h3>Velog</h3>
+                                    <p> Velog 주소 입니다.</p>
+                                </Text>
+                            </Box>
+                            <Box>
+                                <Icon>
+                                    <FontAwesomeIcon style={{ color: 'black' }} icon={faPhone} />
+                                </Icon>
+                                <Text>
+                                    <h3>Phone</h3>
+                                    <p>010-9734-9171</p>
+                                </Text>
+                            </Box>
+                            <Box>
+                                <Icon>
+                                    <FontAwesomeIcon style={{ color: 'black' }} icon={faEnvelope} />
+                                </Icon>
+                                <Text>
+                                    <h3>Email</h3>
+                                    <p>ehddlfwkd32@naver.com</p>
+                                </Text>
+                            </Box>
+                        </ContactInfo>
+                        <ContactForm>
+                            <div>
+                                <h2>Send Message</h2>
+                                <InputBox>
+                                    <input type="text" name="" required />
+                                    <span>Full Name</span>
+                                </InputBox>
+                                <InputBox>
+                                    <input type="text" name="" required />
+                                    <span>Email</span>
+                                </InputBox>
+                                <InputBox>
+                                    <textarea required />
+                                    <span>Message</span>
+                                </InputBox>
+                                <InputBox>
+                                    <input type="submit" name="" value="Send"></input>
+                                </InputBox>
+                            </div>
+                        </ContactForm>
+                    </Container>
+                </Section>
+            </Inner>
+            <Footerspan> © 2024 Designed by KIM Di. All rights reserved.</Footerspan>
+        </Back>
     );
 };
 
