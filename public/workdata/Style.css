@@ -87,10 +87,14 @@ header {
     justify-content: center;
     align-items: center;
     font-size: 16px;
+    h1 {
+        margin-left: 4px;
+    }
     span {
         margin-left: 12px;
     }
 }
+
 nav {
     display: flex;
     height: inherit;
@@ -810,6 +814,14 @@ section {
 /**************  모바일 반응형 시작 **************/
 
 @media (max-width: 768px) {
+    .header_logininfo_check {
+        display: none;
+    }
+
+    .header_logininfo_button button {
+        margin-bottom: 8px;
+    }
+
     .sub_container {
         display: flex;
         justify-content: left;
@@ -888,6 +900,8 @@ section {
 
     #balsin_title {
         width: 80%;
+        margin-left: 0;
+        margin-top: 4px;
     }
 
     .mobile_four_container {
@@ -999,6 +1013,7 @@ section {
 
     .mobile_send {
         width: 90%;
+        margin-bottom: 50px;
     }
 
     .Division {
@@ -1050,10 +1065,13 @@ section {
         justify-content: space-around;
         align-items: center;
         position: fixed;
+
         bottom: 0;
         width: 100%;
         height: 7%;
-        border-top: 1px solid #adadad;
+        border-top: 2px solid #adadad;
+        border-right: 2px solid #adadad;
+        border-left: 2px solid #adadad;
         border-top-left-radius: 24px;
         border-top-right-radius: 24px;
         background-color: #fff;
@@ -1072,6 +1090,8 @@ section {
         }
 
         h1 {
+            font-weight: 700;
+            margin-top: 8px;
             font-size: 12px;
         }
     }
@@ -1081,6 +1101,16 @@ section {
 
 /**************  태블릿 반응형 시작 **************/
 @media (max-width: 1024px) {
+    .header_logininfo_check {
+        display: none;
+    }
+    .header_logininfo_button {
+        display: flex;
+        flex-direction: column;
+    }
+    .header_logininfo_button button {
+        margin-bottom: 8px;
+    }
 }
 
 /**************  태블릿 반응형 끝 **************/

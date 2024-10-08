@@ -422,7 +422,7 @@ const Works = () => {
                                     <Summary2>
                                         <p>발송 OK 후속 신규 서비스 발송페이지</p> 와이어프레임 & 퍼블리싱 작업
                                     </Summary2>
-                                    <Skill2>FIGMA , HTML , CSS </Skill2>
+                                    <Skill2>FIGMA , HTML , CSS , 반응형</Skill2>
                                     <LearnMoreButton>
                                         <a href="workdata/work.html" target="_blank">
                                             바로가기
